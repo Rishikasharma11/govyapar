@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  }
+  .company-formation-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 2px 35px rgba(0, 0, 0, 0.12);
+  }
+  th, td {
+    text-align: left;
+    padding: 18px 10px;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: rgba(245, 169, 6, 0.911);
+    color: black;
+    font-size: 17px;
+  }
+
+  #table-plans{
+    background-color: black;
+    color: white;
+  }
+  .table-plans-btn{
+  background-color: rgba(245, 169, 6, 0.911);
+  padding: 8px;
+  border-radius:7px;
+  border:none;
+  color: black;
+  border: none;
+  }
