@@ -21,6 +21,7 @@ import {
     <>
     <Router>
     <Navbar/>
+   
     <Switch>
       <Route exact path="/home">
         <Home/>
