@@ -1,97 +1,132 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { NavLink, Link } from 'react-router-dom';
+import {easeIn, motion} from "framer-motion";
 
 //  import logo from './images/logo.png';
 
 const Navbar = () => {
-  let Links =[
-    {name:"HOME",link:"/home"},
-    {name:"SERVICE",link:"/service"},
-    {name:"PRICING",link:"/pricing"},
-    {name:"AFFILIATE PROGRAM",link:"/affiliate"},
-    {name:"NOTICE",link:"/notice"},
-    {name:"CONTACT",link:"/contact"},
-  ];
-  let [open,setOpen]=useState(false);
+  const [nav, hideNav] = useState("");
+  let [open,setOpen]=useState(false); 
+
   return (  
     <>
-      <div className='shadow-md w-full fixed top-0 left-0 z-10'>
-      <div className='md:flex items-center bg-black justify-between bg-white py-4 md:px-10 px-7'>
-      <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-gray-800'>
-        <span className='text-3xl text-indigo-600 mr-1 pt-2'>
+      <div className='shadow-md bg-white w-full fixed top-0 left-0 z-20'>
+      <div className='md:flex items-center text-black justify-between py-4 md:px-10 px-7'>
+      <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins]'>
+        <span className='text-3xl text-white mr-1 pt-2'>
         
         </span>
-        GoVyapar
+        <Link to ='/home'><img src='govyapar logo.png' className='w-30 h-16'/></Link>
       </div>
       
       <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
       <ion-icon name={open ? 'close':'menu'}></ion-icon>
       </div>
 
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-10 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
-        {
-          Links.map((link)=>(
-            <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-              <Link to = {link.link} className='text-black hover:text-yellow-500 duration-500'>{link.name}</Link>
-            </li>
-          ))
-        }  
+      <ul className={`md:flex md:items-center md:pb-0  absolute md:static md:z-auto z-10 bg-white left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in  ${open ? 'top-30 ':'top-[-800px]'}`}>
+            
+             <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)} to="/home" className="hover:text-yellow-500 focus:text-yellow-500 active:text-yellow-500">Home</NavLink></li>
+             <li className="group md:ml-8 text-xl md:my-0 my-7">
+              
+               <li className="hover:text-yellow-500 focus:text-yellow-500 cursor-pointer">Services <i className="fa fa-caret-down cursor-pointer"></i></li>
+               <ul 
+                 className="md:absolute right-0 md:right-40 items-center hidden group-hover:block bg-white md:px-10 md:py-3 border-1 md:border-0 shadow-md md:rounded text-black md:h-70"
+               >
+              <div className='container md:space-x-10 md:flex'>
+              <div className='flex-col md:py-2 md:items-left'>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/itrFiling" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">ITR Filing <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Assisted tax filing by qualified tax experts</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/notice" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Notices <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Resolve notices of all types</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/consultation" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Consultation <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Plan and reduce your tax liability</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/ngo" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">NGO <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Register Your NGO</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/startupFunding" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Startup Funding <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Startup Funding</p>
+                 </li>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/businessLoans" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Business Loans <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Business Loans</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+              </div>
+
+              <div className='flex-col md:py-2 md:items-right'>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/gstFiling" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">GST Filing <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>GST registration and timely filing</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink  onClick={() => setOpen(!open)} to="/pricing" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Company Formation <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Expert guidance for seamless incorporation</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/tax-planner" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Tax Planner <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Plan and reduce your tax liability</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/trademark" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Trademark <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Apply Trademark Registration Online</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/virtualCfo" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Virtual CFO <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>Virtual CFO</p>
+                 </li>
+                 <hr className='block md:hidden'/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">ISO Certification <i className='fa fa-caret-right'></i></NavLink>
+                 <p className='text-black text-sm hidden md:block'>ISO Certification</p>
+                 </li>
+              </div> 
+              </div>
+              </ul>
+              
+              {/* <ul 
+                 className="items-left group-hover:block py-3 w-full text-black"
+               >
+              <div className='container md:hidden block'>
+              <div className=''>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/itrFiling" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">ITR Filing <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+                 <hr/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/notice" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Notices <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+                 <hr/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/consultation" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Consultation <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+                 <hr/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/gstFiling" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">GST Filing <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+                 <hr/>
+                 <li><NavLink  onClick={() => setOpen(!open)} to="/pricing" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Company Formation <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+                 <hr/>
+                 <li><NavLink onClick={() => setOpen(!open)} to="/tax-planner" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Tax Planner <i className='fa fa-caret-right'></i></NavLink>
+                 </li>
+
+              </div> 
+              </div>
+
+               </ul> */}
+             </li>
+             <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)} to="/pricing" className="hover:text-yellow-500 focus:text-yellow-500">Pricing</NavLink></li>
+             <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)} to="/affiliate" className="hover:text-yellow-500 focus:text-yellow-500">Affiliate Program</NavLink></li>
+             {/* <li className='md:ml-8 text-xl md:my-0 my-7'><Link onClick={() => setOpen(!open)}to="/career" className="hover:text-yellow-500">Career</Link></li>   */}
+             <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)}to="/contact" className="hover:text-yellow-500 focus:text-yellow-500">Contact</NavLink></li>  
       </ul>
+      
       </div>
     </div>
-    <home/>
-    {/* <header className='bg-black w-full fixed left-0 top-0 h-80 pt-3 px-10'>
-      <nav className='flex items-center justify-between text-white'>
-        <a href='#' className='text-2xl font-bold border-2px-2 py-1'>Govyapar</a>
-        <div className='absolute top-[64px] flex flex-col gap-6  items-center  py-2'>
-        <ul className='items-center flex flex-col'>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Affiliate Program</li>
-          <li>Notices</li>
-          <li>Contact</li>
-        </ul>
-        </div>
-        <div className=''>
-          <i>Login</i>
-        </div>
-      </nav>
-    </header>
-     */}
-
-        
 
     
     </>
-//     <div className="bg-black absolute w-full font-semibold">
-//   <nav className="flex justify-between items-center px-4 py-2">
-//     <Link to="/" className="text-white text-2xl font-bold"></Link>
-//     {/* <img src={logo} alt='logo'/> */}
-//     <ul className="flex justify-center items-center space-x-14 text-white">
-//       <li><Link to="/home" className="hover:text-yellow-500">Home</Link></li>
-//       <li className="relative group">
-//         <li><Link to="/service" className="hover:text-yellow-500">
-//           Services <i className="fa fa-caret-down ml-2"></i></Link>
-//         </li>
-//         <ul 
-//           className="absolute top-full left-0 hidden group-hover:block bg-white px-3 py-3 shadow-md rounded"
-//         >
-//           <li><Link to="/consultation" className="block py-2 px-2 text-black hover:bg-yellow-500 hover:text-black hover:rounded-md">Consultation</Link></li>
-//           <li><Link to="/pricing" className="block py-2 px-2 text-black hover:bg-yellow-500 hover:text-black hover:rounded-md">Pricing</Link></li>
-//           <li><Link to="/tax-planner" className="block py-2 px-2 text-black hover:bg-yellow-500 hover:text-black hover:rounded-md">Tax Planner</Link></li>
-//         </ul>
-//       </li>
-//       <li><Link to="/affiliate" className="hover:text-yellow-500">Affiliate Program</Link></li>
-//       <li><Link to="/about" className="hover:text-yellow-500">About</Link></li>
-//       <li><Link to="/contact" className="hover:text-yellow-500">Contact</Link></li>
-//     </ul> 
-//     <Link to="/" className="flex items-center text-white">
-//       <i className="fa fa-user mr-2  hover:text-yellow-500"></i>
-//     </Link>
-//   </nav>
-// </div> 
+
   );
 };
 

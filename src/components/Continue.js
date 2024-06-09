@@ -2,8 +2,44 @@ import React, { useState } from 'react'
 // import { useFormState } from 'react-use-form-state';
 import {ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import { storage } from '../firebase.config';
+import axios from 'axios'
 
 function Continue(){
+  // const CheckoutHandler = async({name, amount})=>{
+  //   const {data:{order}} = await axios.post("http://localhost:3000/payment/checkout", {
+  //     name,amount
+  //   })
+
+  //   var options = {
+  //     "key": "rzp_test_SDQXydWqPP1S3N", // Enter the Key ID generated from the Dashboard
+  //     "amount": "order.amount", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+  //     "currency": "order.currency",
+  //     "name": "Acme Corp",
+  //     "description": "Test Transaction",
+  //     "image": "https://example.com/your_logo",
+  //     "order_id": "order.id", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+  //     "handler": function (response){
+  //         alert(response.razorpay_payment_id);
+  //         alert(response.razorpay_order_id);
+  //         alert(response.razorpay_signature)
+  //     },
+  //     "prefill": {
+  //         "name": "Gaurav Kumar",
+  //         "email": "gaurav.kumar@example.com",
+  //         "contact": "9000090000"
+  //     },
+  //     "notes": {
+  //         "address": "Razorpay Corporate Office"
+  //     },
+  //     "theme": {
+  //         "color": "#3399cc"
+  //     }
+  //   };
+  //     // const razor = new window.Razorpay(options);
+  //     // razor.open();
+  //     console.log({order})
+  // }
+  
 const[imageUpload, setImageUpload] = useState();
 // const { isValid } = formState;
 
@@ -24,6 +60,7 @@ const[user, setUser] = useState(
         FirstName: '', LastName:'', Email:'', Plan:''
     }
 )
+const [errorMsg, setErrorMsg] = useState("");
 let name, value
 const data = (e) =>
 {
@@ -34,6 +71,11 @@ const data = (e) =>
 }
 const getdata = async (e) => 
 {
+  if (!user.Name || !user.Email || !user.Message) {
+    setErrorMsg("Fill all fields");
+    return;
+  }
+    setErrorMsg("");
     const{FirstName, LastName, Email, Plan} = user;
     e.preventDefault();
     const options = {
@@ -61,7 +103,7 @@ const getdata = async (e) =>
 
   return(
   <>
-<form method='POST' class="flex flex-col space-y-4 h-screen md:h-auto max-w-2xl my-10 pd:my-20 mx-auto px-4 pt-5 md:py-8 rounded-lg shadow-lg bg-white md:mt-40">
+{/* <form method='POST' class="flex flex-col space-y-4 h-screen md:h-auto max-w-2xl my-10 pd:my-20 mx-auto px-4 pt-5 md:py-8 rounded-lg shadow-lg bg-white md:mt-40">
   <h2 class="text-xl font-medium text-center mb-4">Application Form</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -100,12 +142,23 @@ const getdata = async (e) =>
     Submit
   </button>
   </button>
+
     </div>
+
  
   
-</form>
+</form> */}
+
+  <div class="flex flex-col space-y-4 h-screen md:h-auto max-w-2xl my-10 pd:my-20 mx-auto px-4 pt-5 md:py-8 rounded-lg shadow-lg bg-white md:mt-40">
+  <input type="file" name="fileInput"/>
+  </div>
 
   </>
   )
 }
+
 export default Continue
+// rzp_test_SDQXydWqPP1S3N
+// AB52a4tekT3otbYIxlq9LtpO -secret
+
+  
