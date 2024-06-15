@@ -53,6 +53,7 @@ const Navbar = () => {
                  <li><NavLink onClick={() => setOpen(!open)} to="/startupFunding" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Startup Funding <i className='fa fa-caret-right'></i></NavLink>
                  <p className='text-black text-sm hidden md:block'>Startup Funding</p>
                  </li>
+                 <hr className='block md:hidden'/>
                  <li><NavLink onClick={() => setOpen(!open)} to="/businessLoans" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Business Loans <i className='fa fa-caret-right'></i></NavLink>
                  <p className='text-black text-sm hidden md:block'>Business Loans</p>
                  </li>

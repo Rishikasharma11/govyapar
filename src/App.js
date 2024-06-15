@@ -37,6 +37,7 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase.config";
 import RazorpayButton from "./components/RazorpayButton";
 import BusinessLoans from "./components/BusinessLoans";
+import FileUpload from "./components/FileUpload";
 // import { text } from "stream/consumers";
 // import StripeCheckout from "react-stripe-checkout"
 // import Chatbot from 'react-chatbot-kit';
@@ -154,6 +155,7 @@ import BusinessLoans from "./components/BusinessLoans";
       <Route path="/startupFunding" element={<StartupFunding />} /> 
       <Route path="/virtualCfo" element={<VirtualCfo />} /> 
       <Route path="/razorpayButton" element={<RazorpayButton />} /> 
+      <Route path="/fileUpload" element={<FileUpload />} /> 
       <Route path="/businessLoans" element={<BusinessLoans/>} />
       <Route path="/pricing" element={<Pricing />} />
       {/* -------------affiliate--------------------- */}

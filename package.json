@@ -102,6 +102,9 @@
   "react-native": "^0.74.1",
   
     
+  "react-pdf": "^9.0.0",
+  
+    
   "react-phone-input-2": "^2.15.1",
   
     
