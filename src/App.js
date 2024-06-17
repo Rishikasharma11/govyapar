@@ -38,6 +38,7 @@ import { auth } from "./firebase.config";
 import RazorpayButton from "./components/RazorpayButton";
 import BusinessLoans from "./components/BusinessLoans";
 import FileUpload from "./components/FileUpload";
+import TestMail from "./components/TestMail";
 // import { text } from "stream/consumers";
 // import StripeCheckout from "react-stripe-checkout"
 // import Chatbot from 'react-chatbot-kit';
@@ -166,7 +167,7 @@ import FileUpload from "./components/FileUpload";
       <Route path="/contact" element={<Contact />} />
       <Route path="/career" element={<Career />} />
       <Route path="/continue" element={<Continue />} /> 
-      {/* <Route path="/product" element={<Product />} />  */}
+      <Route path="/testMail" element={<TestMail />} /> 
        </Routes>
        </Router> 
     </>
