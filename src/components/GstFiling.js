@@ -226,6 +226,7 @@ const GstFiling = () => {
         }
 
         ]
+        window.scrollTo(0,0);
   return (
    <>
    <div>
@@ -316,7 +317,7 @@ className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 mi
           <i className="fas fa-check-circle mr-2 text-black"></i>Any modification in GST <br/> Registration Application
         </li>
       </ul>
-      <Link to ="/contact"><button className="btn-primary text-white bg-black hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to ="/gstRegistration"><button className="btn-primary text-white bg-black hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
         Choose Plan
       </button></Link>
     </motion.div>
@@ -516,7 +517,8 @@ className="xl:px-40 lg:px-40 px-10 py-4">
   <form class="flex w-full pt-2">
        <input 
        type="tel" 
-       placeholder="xxxx-xxx-xxx" 
+        placeholder="Enter Phone Number" 
+  maxLength={10} 
        pattern='[0-9]{4}-[0-9]{3}-[0-9]{3}'
        name="tel" 
        required 

@@ -99,6 +99,7 @@ function Contact(){
         }
       }
 
+      window.scrollTo(0,0);
   return(
     <>
         {/* -----------------------------------------------Subscribe to our newsletter------------------------------------------------ */}

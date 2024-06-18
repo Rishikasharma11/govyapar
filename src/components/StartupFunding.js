@@ -97,6 +97,7 @@ function StartupFunding(){
          }
        }
  
+       window.scrollTo(0,0);
   return (
     <>
     {/* -----------------------------------Startup Funding-------------------------- */}
@@ -333,7 +334,8 @@ className="grid grid-rows-9 sm:grid-rows-5 sm:grid-cols-2 md:grid-cols-3 md:grid
         type='tel' 
         name='Number'
         value={user.Number} 
-        placeholder="xxxx-xxx-xxx" 
+         placeholder="Enter Phone Number" 
+  maxLength={10} 
         pattern='[0-9]{4}-[0-9]{3}-[0-9]{3}'
         className='w-full p-1 rounded-r-md' 
         required

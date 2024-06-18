@@ -1005,6 +1005,7 @@ className="pricing-box bg-black text-center shadow-md rounded-md p-6 m-2 min-w-s
     },
   ];
 
+  window.scrollTo(0,0);
   return(
     <>
     {/* <!-- -------------------------------------------------------------Pricing----------------------------------------------------------- --> */} 

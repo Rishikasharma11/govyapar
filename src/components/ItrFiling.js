@@ -98,6 +98,7 @@ const ItrFiling = () => {
         }
       }
 
+      window.scrollTo(0,0);
   return (
     <div>
       <div className=' max-w-full'><a href='https://wa.me/919808030923'>
@@ -114,8 +115,8 @@ const ItrFiling = () => {
   <form class="flex w-full md:py-4 pt-2 justify-center">
   <input 
   type="tel" 
-placeholder="Enter Phone Number" 
-    maxLength={10}
+  placeholder="Enter Phone Number" 
+  maxLength={10}
   name="tel" 
   required 
   class="text-white rounded-md bg-black items-center px-4 py-2 md:w-[30%]  xl:w-[20%] w-full mr-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" />
@@ -191,7 +192,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
           <i className="fas fa-check-circle mr-2 text-black"></i>Agriculture Income
         </li>
       </ul>
-      <Link to = "/razorpayButton"><button className="btn-primary text-white bg-black hover:bg-black hover:shadow-md active:bg-black focus:bg-black focus:border-white px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to = "/fileUpload"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
         Choose Plan
       </button></Link>
       {/* <RazorpayButton/> */}
@@ -222,8 +223,8 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
           <i className="fas fa-check-circle mr-2 text-white"></i>Income from Other Sources
         </li>
       </ul>
-      <Link to = "/contact" target="_blank"><button className="btn-primary text-white bg-yellow-500 hover:bg-yellow-500 hover:shadow-md active:bg-yellow-500 focus:bg-yellow-500 focus:border-white px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
-        Choose Plan
+      <Link to = "/contact"><button class="bg-yellow-500 text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
+      Choose Plan
       </button></Link>
     </motion.div>
   
@@ -252,8 +253,8 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
           <i className="fas fa-check-circle mr-2 text-black"></i>Multiple Capital Gain Income
         </li>
       </ul>
-      <Link to = "/contact"><button className="btn-primary text-white bg-black hover:bg-black hover:shadow-md active:bg-black focus:bg-black focus:border-white px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
-        Choose Plan
+      <Link to = "/contact"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
+      Choose Plan
       </button></Link>
 </motion.div>
 </div>

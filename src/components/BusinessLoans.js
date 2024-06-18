@@ -113,6 +113,7 @@ function BusinessLoans () {
         }
       }
 
+      window.scrollTo(0,0);
   return (
     <>
 {/* -----------------------------------Business Loan-------------------------- */}

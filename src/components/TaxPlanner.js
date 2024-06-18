@@ -97,6 +97,7 @@ function TaxPlanner(){
        }
      }
 
+     window.scrollTo(0,0);
   return(
     <>
    <div><a href='https://wa.me/919808030923'>

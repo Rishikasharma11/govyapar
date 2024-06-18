@@ -164,6 +164,7 @@ function Consultation(){
     ]
     };
 
+    window.scrollTo(0,0);
   return(
     <>
    <div><a href='https://wa.me/919808030923'>
@@ -180,7 +181,8 @@ function Consultation(){
     <form class="flex w-full md:py-4 pt-2 justify-left">
        <input 
        type="tel" 
-       placeholder="xxxx-xxx-xxx" 
+        placeholder="Enter Phone Number" 
+  maxLength={10} 
        pattern='[0-9]{4}-[0-9]{3}-[0-9]{3}' 
        name="tel" 
        required 
