@@ -35,8 +35,9 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase.config";
 import ItrSalaryPlan from "./components/RazorpayButtons/ItrSalaryPlan";
 import GstRegistration from "./components/RazorpayButtons/GstRegistration";
+import ItrFileUpload from "./components/ItrFileUpload";
+import GstFileUpload from "./components/GstFileUpload";
 import BusinessLoans from "./components/BusinessLoans";
-import FileUpload from "./components/FileUpload";
 import TestMail from "./components/TestMail";
 
   function App(){
@@ -70,7 +71,7 @@ import TestMail from "./components/TestMail";
       <Route path="/shareholderDetails" element={<ShareholderDetails />} />
       <Route path="/payment" element={<Payment/>} />
 
-                 {/* --------services----- */}
+              {/* --------services----- */}
       <Route path="/tax-planner" element={<TaxPlanner />} />
       <Route path="/notice" element={<Notice />} />
       <Route path="/itrFiling" element={<ItrFiling />} />
@@ -79,7 +80,6 @@ import TestMail from "./components/TestMail";
       <Route path="/trademark" element={<Trademark />} /> 
       <Route path="/startupFunding" element={<StartupFunding />} /> 
       <Route path="/virtualCfo" element={<VirtualCfo />} /> 
-      <Route path="/fileUpload" element={<FileUpload />} /> 
       <Route path="/businessLoans" element={<BusinessLoans/>} />
       <Route path="/pricing" element={<Pricing />} />
 
@@ -89,11 +89,15 @@ import TestMail from "./components/TestMail";
       <Route path="/signUp" element={<SignUp />} />
 
       <Route path="/contact" element={<Contact />} />
-{/* --------------------------------------------Navbar End------------------------------------ */}
+    {/* --------------------------------------------Navbar End------------------------------------ */}
 
       <Route path="/career" element={<Career />} />
       <Route path="/continue" element={<Continue />} /> 
       <Route path="/testMail" element={<TestMail />} /> 
+
+      {/* ------------------------------Plans Files Upload--------------------------------------- */}
+      <Route path="/itrfileUpload" element={<ItrFileUpload />} /> 
+      <Route path="/gstFileUpload" element={<GstFileUpload/>} /> 
 
       {/* -----------------------RazorpayButtons----------------- */}
       <Route path="/itrSalaryPlan" element={<ItrSalaryPlan />} /> 

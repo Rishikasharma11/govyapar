@@ -192,7 +192,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
           <i className="fas fa-check-circle mr-2 text-black"></i>Agriculture Income
         </li>
       </ul>
-      <Link to = "/fileUpload"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
+      <Link to = "/itrfileUpload"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
         Choose Plan
       </button></Link>
       {/* <RazorpayButton/> */}
