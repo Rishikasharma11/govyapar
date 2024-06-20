@@ -23,7 +23,7 @@ function ItrFileUpload() {
   }, []);
 
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:4000/get-files");
+    const result = await axios.get("http://localhost:4000/get-itr-files");
     console.log(result.data.data);
   };
 
@@ -39,7 +39,7 @@ function ItrFileUpload() {
     formData.append("assesment_year", assesment_year);
 
     const result = await axios.post(
-      "http://localhost:4000/upload-files",
+      "http://localhost:4000/upload-itr-files",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -73,7 +73,8 @@ function ItrFileUpload() {
   const options = [
     {value: "2021-2022", label: "2021-2022"},
     {value: "2022-2023", label: "2022-2023"},
-    {value: "2023-2024", label: "2023-2024"}
+    {value: "2023-2024", label: "2023-2024"},
+    {value: "2024-2025", label: "2024-2025"}
   ]
 
 // ------------------------------------Stepper----------------------------------------------
@@ -81,8 +82,13 @@ function ItrFileUpload() {
   const [isLastStep, setIsLastStep] = useState(false);
   const [isFirstStep, setIsFirstStep] = useState(false);
  
-  const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+  const handleNext = () => {
+    if (uploaded) {
+      !isLastStep && setActiveStep((cur) => cur + 1);
+    }
+  };
   const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
 
   // --------------------------------------Stepper Content-------------------------
   const renderContent = () => {
@@ -122,6 +128,7 @@ function ItrFileUpload() {
           <input
             type="text"
             className="form-control"
+            maxLength={10}
             name="pan_card_number"
             // accept="application/pdf, .jpg, .png, .jpeg"
             required
@@ -213,7 +220,7 @@ function ItrFileUpload() {
       }
     };
  
-    window.scrollTo(0,0);
+    // window.scrollTo(0,0);
   return (
     <div className="mt-28 flex flex-col h-screen md:h-auto max-w-2xl mx-auto px-4 md:py-8 md:mt-28">
       <div className="w-full px-8 text-black">
@@ -223,8 +230,8 @@ function ItrFileUpload() {
         isFirstStep={(value) => setIsFirstStep(value)}
       >
         <Step onClick={() => setActiveStep(0)}>1</Step>
-        <Step onClick={() => setActiveStep(1)}>2</Step>
-        <Step onClick={() => setActiveStep(2)}>3</Step>
+        <Step onClick={() => setActiveStep(1)} disabled={!uploaded}>2</Step>
+        <Step onClick={() => setActiveStep(2)} disabled={!uploaded}>3</Step>
       </Stepper>
       <div className="mt-10">
         {renderContent()}

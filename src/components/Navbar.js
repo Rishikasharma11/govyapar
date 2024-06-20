@@ -87,34 +87,7 @@ const Navbar = () => {
               </div> 
               </div>
               </ul>
-              
-              {/* <ul 
-                 className="items-left group-hover:block py-3 w-full text-black"
-               >
-              <div className='container md:hidden block'>
-              <div className=''>
-                 <li><NavLink onClick={() => setOpen(!open)} to="/itrFiling" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">ITR Filing <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-                 <hr/>
-                 <li><NavLink onClick={() => setOpen(!open)} to="/notice" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Notices <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-                 <hr/>
-                 <li><NavLink onClick={() => setOpen(!open)} to="/consultation" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">Consultation <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-                 <hr/>
-                 <li><NavLink onClick={() => setOpen(!open)} to="/gstFiling" className="block pt-2 px-2 text-black hover:text-yellow-500  hover:rounded-md focus:text-yellow-500">GST Filing <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-                 <hr/>
-                 <li><NavLink  onClick={() => setOpen(!open)} to="/pricing" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Company Formation <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-                 <hr/>
-                 <li><NavLink onClick={() => setOpen(!open)} to="/tax-planner" className="block pt-2 px-2 text-black hover:text-yellow-500 hover:rounded-md focus:text-yellow-500">Tax Planner <i className='fa fa-caret-right'></i></NavLink>
-                 </li>
-
-              </div> 
-              </div>
-
-               </ul> */}
+            
              </li>
              <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)} to="/pricing" className="hover:text-yellow-500 focus:text-yellow-500">Pricing</NavLink></li>
              <li className='md:ml-8 text-xl md:my-0 my-7'><NavLink onClick={() => setOpen(!open)} to="/affiliate" className="hover:text-yellow-500 focus:text-yellow-500">Affiliate Program</NavLink></li>

@@ -317,7 +317,7 @@ className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 mi
           <i className="fas fa-check-circle mr-2 text-black"></i>Any modification in GST <br/> Registration Application
         </li>
       </ul>
-      <Link to ="/gstRegistration"><button className="btn-primary text-white bg-black hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to ="/gstFileUpload"><button className="btn-primary text-white bg-black hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
         Choose Plan
       </button></Link>
     </motion.div>
