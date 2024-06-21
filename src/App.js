@@ -11,7 +11,6 @@ import Notice from "./components/Notice";
 import Contact from "./components/Contact";
 import Consultation from "./components/Consultation";
 import CompanyFormation from "./components/CompanyFormation";
-import CompanyDetails from "./components/CompanyDetails";
 import DirectorDetails from "./components/DirectorDetails";
 import ShareholderDetails from "./components/ShareholderDetails";
 import Payment from "./components/Payment";
@@ -25,7 +24,6 @@ import Trademark from "./components/Trademark";
 import StartupFunding from "./components/StartupFunding";
 import VirtualCfo from "./components/VirtualCfo";
 import Career from "./components/Career";
-
 import {
   BrowserRouter as Router,
   Route,
@@ -66,7 +64,6 @@ import TestMail from "./components/TestMail";
 
               {/* -------company formation------ */}
       <Route path="/companyFormation" element={<CompanyFormation />} />
-      <Route path="/companyDetails" element={<CompanyDetails />} />
       <Route path="/directorDetails" element={<DirectorDetails />} />
       <Route path="/shareholderDetails" element={<ShareholderDetails />} />
       <Route path="/payment" element={<Payment/>} />

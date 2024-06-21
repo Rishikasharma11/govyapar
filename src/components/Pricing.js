@@ -1165,7 +1165,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
   className='flex space-x-2 justify-center text-lg'>
         <a href='https://www.linkedin.com/company/govyapar/'><li><i class="fa fa-linkedin text-yellow-500 hover:font-bold"></i></li></a>
         {/* <li><i class="fa fa-twitter text-yellow-500 hover:font-bold"></i></li> */}
-        <li><i class="fa fa-instagram text-yellow-500 hover:font-bold"></i></li>
+        <li><i class="fa fa-instagram text-yellow-500 hover:font-bold"></i></li> 
         <li><i class="fa fa-facebook-f text-yellow-500 hover:font-bold"></i></li>
         <a href='https://www.youtube.com/@govyapar'><li><i class="fa fa-youtube text-yellow-500 hover:font-bold"></i></li></a>
 </ul>

@@ -317,7 +317,7 @@ className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 mi
           <i className="fas fa-check-circle mr-2 text-black"></i>Any modification in GST <br/> Registration Application
         </li>
       </ul>
-      <Link to ="/gstFileUpload"><button className="btn-primary text-white bg-black hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to ="/gstFileUpload"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
         Choose Plan
       </button></Link>
     </motion.div>
@@ -347,7 +347,7 @@ className="pricing-box bg-black text-center shadow-md rounded-md p-6 m-2 min-w-s
           <i className="fas fa-check-circle mr-2 text-white"></i>Excludes Annual Return
         </li>
       </ul>
-      <Link to ="/contact"><button className="btn-primary text-white bg-yellow-500 hover:bg-gray-800 hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to ="/contact"><button class="bg-yellow-500 text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
         Choose Plan
       </button></Link>
     </motion.div>
@@ -377,7 +377,7 @@ className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 mi
           <i className="fas fa-check-circle mr-2 text-black"></i>Excludes Annual Return
         </li>
       </ul>
-      <Link to ="/contact"><button className="btn-primary text-white bg-black hover:shadow-md px-4 py-2 rounded-md font-bold mt-4 uppercase transition ease-in-out duration-100">
+      <Link to ="/contact"><button class="bg-black text-white uppercase font-bold py-2 px-4 rounded-md shadow-black-md text-sm hover:scale-105 duration-300 ease-in mt-4">
         Choose Plan
       </button></Link>
     </motion.div>
@@ -445,34 +445,21 @@ transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, 
 className="xl:px-40 lg:px-40 px-10 py-4">
 <ul className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 sm:grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4">
 
-    
-      {/* <img src ="one-number.png" className='w-[10%] md:w-[10%] lg:w-[12%] pb-32 md:pb-24 lg:pb-20 pr-5 rounded-md'></img> */}
-    {/* <p className="rounded-full md:block hidden bg-transparent border-4 px-6 h-[40px] border-yellow-500 text-2xl float-left font-bold">Step 1:</p>
-    <p className="border-dashed md:block hidden border-1 border-black w-0 h-[110px] relative right-20 top-10"></p> */}
     <li class="bg-yellow-500 p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
       <h1 className='font-bold md:text-md lg:text-xl'>Decide - Streamline Your GST Process</h1>
       <p className='text-sm'>You should understand what it means and why it has been sent in the first place</p>
     </li>
     
-    {/* <img src ="two.png" className='w-[10%] md:w-[10%] lg:w-[12%] pb-32 sm:pb-40 md:pb-24 lg:pb-20 pr-5 rounded-md'></img> */}
-    {/* <p className="rounded-full md:block hidden bg-transparent border-4 px-6 h-[40px] border-yellow-500 text-2xl float-left font-bold">Step 2:</p>
-    <p className="border-dashed md:block hidden border-1 border-black w-0 h-[110px] relative right-20 top-10"></p> */}
     <li class="bg-yellow-500  p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
       <h1 className='font-bold md:text-md lg:text-xl'>Document - Hassle-Free GST Documentation</h1>
       <p className='text-sm'>Share your documents as guided by our tax expertn</p>
     </li>
    
-    {/* <img src ="three.png" className='w-[10%] md:w-[10%] lg:w-[12%] pb-32 md:pb-24 lg:pb-20 pr-5 rounded-md'></img> */}
-    {/* <p className="rounded-full md:block hidden bg-transparent border-4 px-6 h-[40px] border-yellow-500 text-2xl float-left font-bold">Step 3:</p>
-    <p className="border-dashed md:block hidden border-1 border-black w-0 h-[110px] relative right-20 top-10"></p> */}
     <li class="bg-yellow-500 p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1  ease-in duration-300 hover:scale-105">
       <h1 className='font-bold md:text-md lg:text-xl'>GST Filing Completed - Your Compliance Partner</h1>
       <p className='text-sm'>Once you confirm, your GST filing will be completed in no time.</p>
     </li>
 
-    {/* <img src ="four-number.png" className='w-[10%] md:w-[10%] lg:w-[12%] pb-32 md:pb-24 lg:pb-20 pr-5 rounded-md'></img> */}
-    {/* <p className="rounded-full md:block hidden bg-transparent border-4 px-6 h-[40px] border-yellow-500 text-2xl float-left font-bold">Step 4:</p>
-    <p className="border-dashed border-0 border-black md:block hidden w-0 h-0 relative right-20 top-10"></p> */}
     <li class="bg-yellow-500  p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
       <h1 className='font-bold md:text-md lg:text-xl'>Expert Advice: Our GST Consultants Guide You</h1>
       <p className='text-sm'>Our expert will scan your documents and use them to save you the maximum tax.</p>
@@ -510,15 +497,15 @@ className="xl:px-40 lg:px-40 px-10 py-4">
           <li class="bg-gradient-to-r from-yellow-400 to-yellow-100 p-3 shadow-md cursor-pointer md:hover:-translate-x-1 bg-black ease-in duration-300 hover:scale-105">
           <h1 className='font-bold text-xl'> GSTR-9</h1></li>
         </ul> 
-<div className='md:py-32 py-5 md:px-40'>
-  <img src='arrow.png' className='float-left md:w-[15%] w-[10%]'/>
-  <div className='md:grid md:grid-cols-1 md:grid-rows-2'>
-  <p className="md:text-2xl text-xl text-bold">Start your tax journey with us today!</p>
-  <form class="flex w-full pt-2">
+    <div className='md:py-32 py-5 md:px-40'>
+       <img src='arrow.png' className='float-left md:w-[15%] w-[10%]'/>
+       <div className='md:grid md:grid-cols-1 md:grid-rows-2'>
+       <p className="md:text-2xl text-xl text-bold">Start your tax journey with us today!</p>
+       <form class="flex w-full pt-2">
        <input 
        type="tel" 
-        placeholder="Enter Phone Number" 
-  maxLength={10} 
+       placeholder="Enter Phone Number" 
+       maxLength={10} 
        pattern='[0-9]{4}-[0-9]{3}-[0-9]{3}'
        name="tel" 
        required 
