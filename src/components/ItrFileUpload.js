@@ -23,7 +23,7 @@ function ItrFileUpload() {
   }, []);
 
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:4000/get-itr-files");
+    const result = await axios.get("http://3.7.118.46:4000/get-itr-files");
     console.log(result.data.data);
   };
 
@@ -39,7 +39,7 @@ function ItrFileUpload() {
     formData.append("assesment_year", assesment_year);
 
     const result = await axios.post(
-      "http://localhost:4000/upload-itr-files",
+      "http://3.7.118.46:4000/upload-itr-files",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },

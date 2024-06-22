@@ -24,7 +24,7 @@ function GstFileUpload() {
   }, []);
 
     const getPdf = async () => {
-    const result = await axios.get("http://localhost:4000/get-gst-files");
+    const result = await axios.get("http://3.7.118.46:4000/get-gst-files");
     console.log(result.data.data);
   };
 
@@ -41,7 +41,7 @@ function GstFileUpload() {
     formData.append("phone_number", phone_number);
 
     const result = await axios.post(
-      "http://localhost:4000/upload-gst-files",
+      "http://3.7.118.46:4000/upload-gst-files",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
