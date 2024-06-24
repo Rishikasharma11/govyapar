@@ -7,19 +7,14 @@ import "slick-carousel/slick/slick-theme.css";
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { Swiper, SwiperSlide } from 'swiper/react';
 import {
    Card,
    CardHeader,
    CardBody,
    CardFooter,
  } from "@material-tailwind/react";
-//  import 'swiper/css';
-// import 'swiper/css/effect-coverflow';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
 import { Carousel, Typography, Button } from "@material-tailwind/react";
-// import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+
 
 function Affiliate(){
  // --------------------------------------------subscribe to our newsletter--------------------------------
@@ -160,7 +155,7 @@ if (!user.Name || !user.Number || !user.Message) {
         }
     ]
     };
-
+    window.scrollTo(0,0);
   return(
     <>
     <div><a href='https://wa.me/919808030923'>
