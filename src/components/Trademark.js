@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
-import { storage } from '../firebase.config';
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -47,7 +46,7 @@ function Trademark(){
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -59,10 +58,10 @@ function Trademark(){
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -103,7 +102,7 @@ function Trademark(){
     <>
     <div>
     <a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
 
     {/* ---------------------------------------------Apply for trademark-------------------------------- */}
     <motion.div initial={{x:-100, opacity:0}}
@@ -171,7 +170,7 @@ initial={{x:-100, opacity:0}}
 whileInView={{x:0, opacity:1}}
 transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
 className='container max-w-full mx-0 pt-10 md:pt-40 md:px-20 xl:pr-56 xl:px-48 scroll-smooth overflow-hidden'>
-<img src="Trademark brand.jpg" className='md:float-left md:w-[50%] xl:w-[40%]'/>
+<img src="Trademark brand.jpg" className='md:float-left md:w-[50%] xl:w-[40%]' alt=''/>
     <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight'>Trademark Registration In India - An Overview</h1>
     <p className='text-xl text-justify '>
     Trademark Registration is key for businesses to protect their Intellectual Property. Registering gives you Brand Protection and the sole Legal Rights to your symbol, logo, or name. Always do a Trademark Search before registering. This ensures no other trademarks could cause Infringement. For your application, you'll choose Trademark Classes and send it to the Trademark Office. Consulting a Trademark Attorney can make the process smoother. After registering, you can use the Trademark Symbol. Do not forget to meet Renewal deadlines to keep your rights. This whole process strengthens your Brand Identity and stops others from copying.
@@ -193,7 +192,7 @@ className='container max-w-full mx-0 pt-10 md:pt-40 md:px-20 xl:pr-56 xl:px-48 s
     whileInView={{x:0, opacity:1}}
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
     className='container max-w-full mx-0 mt-5 md:mt-20 xl:pl-60 pt-20 xl:px-32 md:px-16 scroll-smooth'>
-    <img src="trademark classes.jpg" className='md:float-right md:w-[50%] lg:w-[40%]'/>
+    <img src="trademark classes.jpg" className='md:float-right md:w-[50%] lg:w-[40%]' alt=''/>
     <h1 className='text-3xl md:text-3xl lg:text-4xl font-bold text-black leading-tight'>Trademark Classes</h1>
     <p className='text-lg text-justify'>
     There are 45 trademark classes and all the goods and services are categorised across these classes. You need to be very careful while picking the classes as it will determine the validity of your trademark registration for your business’ products/services. If your business operates across different goods/services that fall under different classes, you have to ensure that you can apply for a trademark online under all the applicable classes.

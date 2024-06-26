@@ -1,5 +1,5 @@
-import React, { Fragment, useRef, useEffect, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
+import React, { useRef, useState } from 'react'
+import {motion} from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,20 +7,11 @@ import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { Swiper, SwiperSlide } from 'swiper/react';
 import {
    Card,
-   CardHeader,
    CardBody,
-   CardFooter,
  } from "@material-tailwind/react";
-// import { BlogCard } from "./blog-card";
-// import 'swiper/css';
-// import 'swiper/css/effect-coverflow';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-import { Carousel, Typography, Button } from "@material-tailwind/react";
-// import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { Typography } from "@material-tailwind/react";
 
 
 function Consultation(){
@@ -63,7 +54,7 @@ function Consultation(){
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -75,10 +66,10 @@ function Consultation(){
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -115,29 +106,6 @@ function Consultation(){
         }
       }
 
-  
-  // var settings = {
-  //   loop: true,
-  //   center: true,
-  //   items: 3,
-  //   margin: 0,
-  //   autoplay: true,
-  //   dots:true,
-  //   autoplayTimeout: 8500,
-  //   smartSpeed: 450,
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     768: {
-  //       items: 2
-  //     },
-  //     1170: {
-  //       items: 3
-  //     }
-  //   }
-  // }
-  
    var settings = {
       autoplay: true,
       autoplaySpeed: 1000,
@@ -168,7 +136,7 @@ function Consultation(){
   return(
     <>
    <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
     <div className="container pt-32 mb-20 md:h-auto justify-center text-center mx-0 max-w-full scroll-smooth"> 
     <div className='max-w-full mx-0'>
@@ -295,7 +263,7 @@ function Consultation(){
   
 {/* --------------------------------------------------Why Govyapar---------------------------------- */}
 <div className='py-12 px-2 lg:px-20 xl:px-60 max-w-full mx-0'> 
-<img src="govyapar logo.png" className='md:w-[30%] md:float-right lg:pr-40 md:pr-20 px-10 md:block hidden'/>
+<img src="govyapar logo.png" className='md:w-[30%] md:float-right lg:pr-40 md:pr-20 px-10 md:block hidden' alt=''/>
     <div className='md:px-20 lg:px-40'>
     <h1 className="sm:text-2xl md:text-3xl xl:text-4xl font-semibold md:text-left sm:text-center text-yellow-500 min-w-full">WHY GOVYAPAR?
     <br/></h1>
@@ -314,26 +282,26 @@ function Consultation(){
 
    
     <li class="bg-transaparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <p className="text-md lg:text-2xl font-bold"> <img src='online-meeting.png' className='px-5 placeholder:lg:px-24'/> </p>
+    <p className="text-md lg:text-2xl font-bold"> <img src='online-meeting.png' className='px-5 placeholder:lg:px-24' alt=''/> </p>
       <h1 className='font-bold text-xl text-center text-yellow-500'>Online Meet</h1>
       <p className='text-sm text-justify text-white'>Conduct online meetings with our clients to save their commuting costs and time</p>
     </li>
     
 
     <li class="bg-transaparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <p className="text-md lg:text-2xl font-bold"> <img src='web-security.png' className='px-5 lg:px-24'/> </p>
+    <p className="text-md lg:text-2xl font-bold"> <img src='web-security.png' className='px-5 lg:px-24' alt=''/> </p>
       <h1 className='font-bold text-xl text-center text-yellow-500'>Secured Platform</h1>
       <p className='text-sm text-justify text-white'>The whole platform is secured and safefor the users</p>
     </li>
 
     <li class="bg-transparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <p className="text-md lg:text-2xl font-bold"> <img src='checklist.png' className='px-5 lg:px-24'/> </p>
+    <p className="text-md lg:text-2xl font-bold"> <img src='checklist.png' className='px-5 lg:px-24' alt=''/> </p>
       <h1 className='font-bold text-xl text-center text-yellow-500'>All Ears to Your Queries</h1>
       <p className='text-sm text-justify text-white'>Your feedback and queries contribute to the development of serviecs tailored to ypour needs</p>
     </li>
 
     <li class="bg-transparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <p className="text-md lg:text-2xl font-bold"> <img src='notepad.png' className='px-5 lg:px-24'/> </p>
+    <p className="text-md lg:text-2xl font-bold"> <img src='notepad.png' className='px-5 lg:px-24' alt=''/> </p>
       <h1 className='font-bold text-xl text-center text-yellow-500'>With a Notebook</h1>
       <p className='text-sm text-justify text-white'>You say it. We note it immediately to get rid of any confusion</p>
     </li>
@@ -374,7 +342,7 @@ function Consultation(){
   whileInView={{x:0, opacity:1}}
   animate={{ x: 100 }}
   transition={{ ease: "easeOut", duration: 2 }}
-  src="tap_Consultation.png" className='md:float-left w-[20%] relative bottom-3'/>
+  src="tap_Consultation.png" className='md:float-left w-[20%] relative bottom-3' alt=''/>
 </form>
   </div>
 
@@ -388,7 +356,7 @@ function Consultation(){
       <div class="mb-12 md:mb-0">
         <div class="mb-6 flex justify-center">
           <img src="employee.png"
-            class="w-32 rounded-full shadow-lg dark:shadow-black/20" />
+            class="w-32 rounded-full shadow-lg dark:shadow-black/20"  alt=''/>
         </div>
         <h5 class="mb-2 text-lg font-bold">Maria Smantha</h5>
         <h6 class="mb-4 font-bold text-yellow-600 dark:text-primary-400">
@@ -437,7 +405,7 @@ function Consultation(){
       <div class="mb-12 md:mb-0">
         <div class="mb-6 flex justify-center">
           <img src="employee.png"
-            class="w-32 rounded-full shadow-lg dark:shadow-black/20" />
+            class="w-32 rounded-full shadow-lg dark:shadow-black/20"  alt=''/>
         </div>
         <h5 class="mb-2 text-lg font-bold">Lisa Cudrow</h5>
         <h6 class="mb-4 font-bold text-yellow-600 dark:text-primary-400">
@@ -486,7 +454,7 @@ function Consultation(){
       <div class="mb-0">
         <div class="mb-6 flex justify-center">
           <img src="employee.png"
-            class="w-32 rounded-full shadow-lg dark:shadow-black/20" />
+            class="w-32 rounded-full shadow-lg dark:shadow-black/20"  alt=''/>
         </div>
         <h5 class="mb-2 text-lg font-bold">John Smith</h5>
         <h6 class="mb-4 font-bold text-yellow-600 dark:text-primary-400">
@@ -535,144 +503,6 @@ function Consultation(){
     </div>
   </section>
 </div>
-
-
-    {/* --------------------------------------------------------------------------- */}
-    {/* <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20 bg-white dark:bg-dark w-full mx-0">
-   <div class="container mx-auto">
-      <div class="flex flex-wrap justify-center -mx-4">
-         <div class="w-full px-4">
-            <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
-               <span class="block mb-2 text-lg font-semibold text-yellow-500">
-               Our Blogs
-               </span>
-               <h2
-                  class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px] dark:text-white"
-                  >
-                  Our Recent News
-               </h2>
-               <p class="text-base text-body-color dark:text-dark-6">
-               --- - --- -- - -- - ---- - - -- -  Paragraph - --- -- --- - --- -- - -- - ---- - - -- -  -- -- - 
-               </p>
-            </div>
-         </div>
-      </div>
-      <div class="flex flex-wrap -mx-4 px-20">
-         <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="w-full mb-10">
-               <div class="mb-8 overflow-hidden rounded">
-                  <img
-                     src="Why Do.png"
-                     alt="image"
-                     class="w-[50%]"
-                     />
-               </div>
-               <div>
-                  <span
-                     class="inline-block px-4 py-1 mb-5 text-xs font-semibold leading-loose text-center text-white rounded bg-yellow-500"
-                     >
-                  Dec 22, 2023
-                  </span>
-                  <h3>
-                     <a
-                        href="javascript:void(0)"
-                        class="inline-block mb-4 text-xl font-semibold text-dark dark:text-white hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
-                        >
-                    Heading
-                     </a>
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                  ------ ------ ---- ---------Matter------- ------ ---- ---- --- ----- ---
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="w-full mb-10">
-               <div class="mb-8 overflow-hidden rounded">
-                  <img
-                     src="notice3.jpg"
-                     alt="image"
-                     class="w-[50%]"
-                     />
-               </div>
-               <div>
-                  <span
-                     class="inline-block px-4 py-1 mb-5 text-xs font-semibold leading-loose text-center text-white rounded bg-yellow-500"
-                     >
-                  Read More
-                  </span>
-                  <h3>
-                     <a
-                        href="javascript:void(0)"
-                        class="inline-block mb-4 text-xl font-semibold text-dark dark:text-white hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
-                        >
-                     Heading
-                     </a>
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                     ------ ------ ---- ---------Matter------- ------ ---- ---- --- ----- ---
-                  </p> 
-               </div>
-            </div>
-         </div>
-         <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="w-full mb-10">
-               <div class="mb-8 overflow-hidden rounded">
-                  <img
-                     src="notice2.jpg"
-                     alt="image"
-                     class="w-[50%]"
-                     />
-               </div>
-               <div>
-                  <span
-                     class="inline-block px-4 py-1 mb-5 text-xs font-semibold leading-loose text-center text-white rounded bg-yellow-500"
-                     >
-                  Explore More 
-                  </span>
-                  <h3>
-                     <a
-                        href="javascript:void(0)"
-                        class="inline-block mb-4 text-xl font-semibold text-dark dark:text-white hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
-                        >
-                    Heading
-                     </a>
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                  ------ ------ ---- ---------Matter------- ------ ---- ---- --- ----- ---
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section> */}
-
-    {/* <!-----------------------------------------------------------Consultation-------------------------------------  --> */}
- {/* <motion.section  initial={{x:-100, opacity:0}}
-whileInView={{x:0, opacity:1}}
-transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
- className="container md:mx-20 md:pt-10 mx-0 md:px-40">
-
-  <img  src="Tax-Consultant-2048x1639.png" alt="Tax Consultant" className="md:w-[40%] md:float-right rounded-lg object-cover consultancy-img md:mt-32 md:pr-36" /> 
-  <div className="mt-8 md:pt-10 md:mx-40 md:px-20 md:mt-0 consultancy-para  rounded-md">
-    <h2 className="text-xl font-bold text-black py-3 consultancy-para-h2">Solving All Your Queries With Expert Solutions</h2>
-    <p className="text-black py-2 consultancy-para1">
-      Tax filing is a procedure where many taxpayers end up having many queries.<br/> With the help of our professional experts, this process will be simplified.
-      <motion.ul  initial={{x:-100, opacity:0}}
-whileInView={{x:0, opacity:1}}
-transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
-className="space-y-3 pl-4 py-3 consultancy-para-points">
-        <li><i className="fas fa-arrow-circle-right text-yellow-500"></i> Fast Return Filling For Individuals</li>
-        <li><i className="fas fa-arrow-circle-right text-yellow-500"></i> Tax Planning By An Expert Secure and safe</li>
-        <li><i className="fas fa-arrow-circle-right text-yellow-500"></i> Tax Savings Solutions</li>
-        <li><i className="fas fa-arrow-circle-right text-yellow-500"></i> NRI Tax Filling</li>
-        <li><i className="fas fa-arrow-circle-right text-yellow-500"></i> Selection Of Tax-Regime (with comparison)</li>
-      </motion.ul>
-    </p>
-  </div>
-</motion.section> */}
 
    {/* -----------------------------------------------Subscribe to our newsletter------------------------------------------------ */}
    <div class="container bg-black mt-20 pt-10 max-w-full scroll-smooth">
@@ -728,7 +558,7 @@ className="space-y-3 pl-4 py-3 consultancy-para-points">
     name='Number'
     value={user.Number} 
     placeholder="Enter Phone Number" 
-  maxLength={10}
+    maxLength={10}
     className='w-full p-1 rounded-r-md' 
     required
     onChange={data} 

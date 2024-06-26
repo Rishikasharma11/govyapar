@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
+import { motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -45,7 +45,7 @@ function StartupFunding(){
          Name: '', Number:'', Message:''
      }
    )
-   const [errorMsg, setErrorMsg] = useState("");
+  //  const [errorMsg, setErrorMsg] = useState("");
    let name, value
    const data = (e) =>
    {
@@ -57,10 +57,10 @@ function StartupFunding(){
    const getdata = async (e) => 
    {
    if (!user.Name || !user.Number || !user.Message) {
-     setErrorMsg("Fill all fields");
+    //  setErrorMsg("Fill all fields");
      return;
    }
-     setErrorMsg("");
+    //  setErrorMsg("");
      
      const{Name, Number, Message} = user;
      e.preventDefault();
@@ -107,7 +107,7 @@ function StartupFunding(){
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
     className='container max-w-full mx-0 pt-32 md:pt-40 md:px-10 xl:px-36 scroll-smooth overflow-hidden'>
       <h1 className='pb-5 text-center text-4xl sm:text-5xl lg:text-6xl font-bold text-yellow-500 leading-tight md:hidden block'>Startup Funding</h1>
-        <img src="startup funding.jpg" className='md:float-right md:w-[58%] xl:w-[50%] px-4 md:pt-32 pt-6'/>
+        <img src="startup funding.jpg" className='md:float-right md:w-[58%] xl:w-[50%] px-4 md:pt-32 pt-6' alt=''/>
         <h1 className='text-4xl md:text-4xl lg:text-6xl font-bold text-yellow-500 leading-tight md:block hidden'>Startup Funding</h1>
         <p className='text-md lg:text-lg text-justify pt-4'>
         Funding refers to the money required to start and run a business. It is a financial investment in a company for product development, manufacturing, expansion, sales and marketing, office spaces, and inventory. Many startups choose to not raise funding from third parties and are funded by their founders only (to prevent debts and equity dilution). However, most startups do raise funding, especially as they grow larger and scale their operations. This page shall be your virtual guide to Startup funding. 
@@ -125,47 +125,47 @@ function StartupFunding(){
     <ul className="grid grid-cols-2 grid-rows-5 md:grid-cols-4 md:grid-rows-3 gap-4">
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-      <img src="startup funding-1.png" className='px-2 sm:px-auto'/>
+      <img src="startup funding-1.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Prototype Creation</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-2.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-2.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Product Development</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-3.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-3.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Team Hiring</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-4.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-4.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Working Capital</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-5.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-5.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Legal & Consulting Services</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-6.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-6.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Raw Material & Equipments</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-7.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-7.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Licenses & Certifications</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-8.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-8.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Marketing & Sales</h1>
     </li>
 
     <li class="p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105">
-    <img src="startup funding-9.png" className='px-2 sm:px-auto'/>
+    <img src="startup funding-9.png" className='px-2 sm:px-auto' alt=''/>
       <h1 className='font-bold text-center text-sm md:text-md text-black'>Office Space & Admin Expenses</h1>
     </li>
 

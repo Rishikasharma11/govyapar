@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {easeIn, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -46,7 +46,7 @@ function Pricing(){
        Name: '', Number:'', Message:''
    }
  )
- const [errorMsg, setErrorMsg] = useState("");
+//  const [errorMsg, setErrorMsg] = useState("");
  let name, value
  const data = (e) =>
  {
@@ -58,10 +58,10 @@ function Pricing(){
  const getdata = async (e) => 
  {
  if (!user.Name || !user.Number || !user.Message) {
-   setErrorMsg("Fill all fields");
+  //  setErrorMsg("Fill all fields");
    return;
  }
-   setErrorMsg("");
+  //  setErrorMsg("");
    
    const{Name, Number, Message} = user;
    e.preventDefault();
@@ -1010,7 +1010,7 @@ className="pricing-box bg-black text-center shadow-md rounded-md p-6 m-2 min-w-s
     <>
     {/* <!-- -------------------------------------------------------------Pricing----------------------------------------------------------- --> */} 
     <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
   <div className="xl:mx-40 lg:mx-20 max-w-full py-32 lg:py-36 z-[-10]">
     <motion.h1 initial={{x:-100, opacity:0}}
@@ -1088,7 +1088,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
     type='text' 
     name='Name' 
     placeholder="Enter Phone Number" 
-  maxLength={10}
+    maxLength={10}
     value={user.Name} 
     className='w-full p-1 rounded-r-md' 
     required

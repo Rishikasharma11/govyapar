@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
-import { storage } from '../firebase.config';
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function NGO(){
-  
+
   // --------------------------------------------subscribe to our newsletter--------------------------------
   const form = useRef();
 
@@ -47,7 +46,7 @@ function NGO(){
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -59,10 +58,10 @@ function NGO(){
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -103,7 +102,7 @@ function NGO(){
     <>
      <div>
     <a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt='ngo'/></a>
 
     {/* ---------------------------------------------Register form Ngo-------------------------------- */}
     <motion.div 
@@ -179,7 +178,7 @@ function NGO(){
 
     <li class="bg-transaparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 text-center">
      <p className="text-md lg:text-2xl font-bold">
-      <img src="ngo trust.jpg" className=' w-[30%] px-2 py-1 mx-auto rounded-lg'/>  
+      <img src="ngo trust.jpg" className=' w-[30%] px-2 py-1 mx-auto rounded-lg' alt='ngo'/>  
       </p>
       <h1 className='font-bold text-xl text-center text-yellow-500 py-2'>Trust Registration</h1>
       <p className='text-sm text-justify text-black'>Trust is an entity registered under the Indian Trust Act, 1882. They are created to focus on the development of science, literature and other noble causes.</p><br/>
@@ -188,7 +187,7 @@ function NGO(){
 
     <li class="bg-transaparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 text-center">
     <p className="text-md lg:text-2xl font-bold">
-      <img src="ngo section.png" className='w-[28%] px-2 py-1 mx-auto rounded-lg'/>  
+      <img src="ngo section.png" className='w-[28%] px-2 py-1 mx-auto rounded-lg' alt='ngo'/>  
       </p>
       <h1 className='font-bold text-xl text-center text-yellow-500 py-2'>Section 8</h1>
       <p className='text-sm text-justify text-black'>A Section 8 company registered under the Companies Act, 2013 is an organisation functioning with an objective to promote non - profit activities like education, social welfare and environmental preservation.</p><br/>
@@ -197,7 +196,7 @@ function NGO(){
     
     <li class="bg-transparent p-3 border-1 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 text-center">
     <p className="text-md lg:text-2xl font-bold">
-      <img src="ngo society.jpg" className='w-[40%] px-2 py-1 mx-auto rounded-lg'/>  
+      <img src="ngo society.jpg" className='w-[40%] px-2 py-1 mx-auto rounded-lg' alt='ngo'/>  
       </p>
       <h1 className='font-bold text-xl text-center text-yellow-500 py-2'>Society Registration</h1>
       <p className='text-sm text-justify text-black'>A society is an organisation involved in charitable activities like education, art, religion, culture, music, and sports. It is registered under the Societies Registration Act of 1860.</p><br/>
@@ -207,6 +206,80 @@ function NGO(){
     </div>
     </div>
 
+    {/* -------------------------------------------------------NGO Side Navbar----------------------- */}
+    {/* <div className='pt-10 px-4 lg:px-10'>
+      <ul className="hidden md:block grid grid-cols-1 grid-rows-7 space-y-3 w-[30%] float-left pr-5">
+              
+            <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)} to="/" className="hover:text-yellow-500 focus:text-yellow-500 active:text-yellow-500">Overview</NavLink></li>
+            <li className="group md:ml-8 text-xl md:my-0 my-7"> 
+             </li>
+             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)} to="/" className="hover:text-yellow-500 focus:text-yellow-500">Benefits</NavLink></li>
+             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)} to="/" className="hover:text-yellow-500 focus:text-yellow-500">Documents Required</NavLink></li>
+             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)}to="/" className="hover:text-yellow-500 focus:text-yellow-500">Eligibility Criteria</NavLink></li>  
+             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)}to="/" className="hover:text-yellow-500 focus:text-yellow-500">Checklist</NavLink></li> 
+             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)}to="/" className="hover:text-yellow-500 focus:text-yellow-500">Process</NavLink></li> 
+      </ul>
+      <div className='text-justify p-2'>
+
+        <div>
+        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Trust Registration- An Overview</h1>
+        <p>Trust registration in Delhi involves establishing a trust that is managed by a person (the settlor) to a trustee. The trustee holds and manages it for the benefit of specific individuals (the beneficiaries). To register a trust in Delhi, one needs to draft a trust deed that outlines the trust's objectives. It encompasses details of trustees and beneficiaries. The trust deed should then be executed and signed by the settlor and trustees. They are registered with the local sub-registrar office where the trust's registered office. This registration helps establish the legal validity of the trust.</p>
+        </div>
+
+        <div>
+        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Benefits of Trust Registration in Delhi</h1>
+        <ul>
+          <li>
+            <h1>Perpetual Existence</h1>
+            <p>A registered trust in Delhi has perpetual existence. It can continue its operations even if there are changes in the trustees. The trust's activities and objectives can be carried forward across generations. It ensures the continuity of its charitable or religious initiatives.</p>
+          </li>
+
+          <li>
+            <h1>Limited liability</h1>
+            <p>One significant benefit of trust registration is limited liability protection. The trustees of a registered trust generally have limited personal liability. In case of legal disputes or debts, the personal assets of the trustees are protected. The trust's assets are used to satisfy the liabilities.</p>
+          </li>
+
+          <li>
+            <h1>Enhanced Credibility</h1>
+            <p>Trust registration enhances the credibility of the organisation. Especially beneficial for the eyes of donors, and government authorities. Being a registered entity demonstrates transparency and accountability. It can attract more donations, grants, and collaborations with other organisations.</p>
+          </li>
+
+          <li>
+            <h1>Operational Advantages</h1>
+            <p>Registered trusts are subject to certain rules and regulations that provide a framework. This framework promotes accountability, transparency, and governance within the trust. It helps streamline the trust's activities, financial management, and reporting procedures. It also ensures better operational efficiency.</p>
+          </li> 
+        </ul>
+        </div>
+
+        <div>
+        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Documents Required for Trust Registration in Delhi</h1>
+        <p>The following documents are required for trust registration in Delhi:</p>
+        <ul>
+          <li>Trust deed</li>
+          <li>Proof of identity and address for trustee</li>
+          <li>Proof of address of the trust</li>
+          <li>Bank account details of the trust</li>
+          <li>A copy of the PAN card of the trust</li>
+        </ul>
+        </div>
+
+        <div>
+        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Eligibility Criteria for Trust Registration in Delhi</h1>
+        <ul>
+          <li>Seeking a competent and willing individual or entity for property transfer</li>
+          <li>Minimum requirement of two individuals or corporate entities</li>
+          <li>The trust activities must be lawful</li>
+          <li>The trust should function within charitable, religious, educational, or social welfare domains</li>
+          <li>Operation should be non-profit, utilising income and property solely for stated objectives</li>
+          <li>Execution of a trust deed to define objectives, rules, and regulations</li>
+          <li>Necessary to obtain relevant authority, submit documents, and pay fees</li>
+          <li>Adherence to rules, regulations, and reporting obligations is expected.</li>
+        </ul>
+        </div>
+
+      </div>
+
+    </div> */}
     {/* ----------------------------------------------NGO Structure-wise Comparison---------------------------------------- */}
     <div className='pt-20 md:pt-40 md:px-10 lg:px-32'>
       <h1 className='text-2xl md:text-3xl text-center font-bold py-2'>NGO Structure-wise Comparison</h1>
@@ -339,7 +412,7 @@ function NGO(){
       {/* ------------------------------------------Post Incorporation Compliances---------------------------------------------------- */}
 
     <div className="xl:px-60 lg:px-40 md:px-32 px-10 py-4 ">
-    <img src='ngo company.jpg' className='lg:px-10 xl:px-40'/>
+    <img src='ngo company.jpg' className='lg:px-10 xl:px-40' alt='ngo'/>
       <h1 className='text-2xl md:text-3xl text-center font-bold py-2'>Post Incorporation Compliances</h1>
     <p className='text-md md:text-lg text-center'>Ensuring Post Registration Legal Compliances for your NGO by experts! </p>
     <motion.ul 

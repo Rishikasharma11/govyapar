@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import {motion} from "framer-motion";
-import { storage } from '../firebase.config';
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -46,7 +45,7 @@ function VirtualCfo () {
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -58,10 +57,10 @@ function VirtualCfo () {
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();

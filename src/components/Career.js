@@ -1,7 +1,6 @@
 import React, { useRef,  useState } from 'react'
 import { Link } from 'react-router-dom'
-import {easeIn, motion} from "framer-motion";
-import { storage } from '../firebase.config';
+import {motion} from "framer-motion";
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -46,7 +45,7 @@ const Career = () => {
       Name: '', Number:'', Message:''
   }
 )
-const [errorMsg, setErrorMsg] = useState("");
+// const [errorMsg, setErrorMsg] = useState("");
 let name, value
 const data = (e) =>
 {
@@ -58,10 +57,10 @@ const data = (e) =>
 const getdata = async (e) => 
 {
 if (!user.Name || !user.Number || !user.Message) {
-  setErrorMsg("Fill all fields");
+  // setErrorMsg("Fill all fields");
   return;
 }
-  setErrorMsg("");
+  // setErrorMsg("");
   
   const{Name, Number, Message} = user;
   e.preventDefault();
@@ -103,7 +102,7 @@ if (!user.Name || !user.Number || !user.Message) {
     <div className='mx-0 max-w-full'>
 {/* ----------------------------------------------Career-------------------------------- */}
     <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt='' /></a>
     </div>
     <div className='container mt-36 items-center max-w-full md:px-10 xl:px-40 h-screen'>
     <img src='career.jpg' className='md:float-right md:w-[50%] lg:w-[40%] hidden md:block' alt=''/>
@@ -123,7 +122,7 @@ if (!user.Name || !user.Number || !user.Message) {
     
      <div className='xl:px-24 md:px-10'>
      <p className='md:text-2xl text-md pt-4 text-left text-yellow-500 font-semibold'>Our Core Values</p>
-     <img src='career2.jpg' className='md:float-right xl:px-20 md:w-[60%] xl:w-[58%] hidden md:block'/>
+     <img src='career2.jpg' className='md:float-right xl:px-20 md:w-[60%] xl:w-[58%] hidden md:block' alt=''/>
      <table className='career-table'>
      <tr>
         <td>1</td>
@@ -163,19 +162,19 @@ if (!user.Name || !user.Number || !user.Message) {
      <h1 className='text-xl text-black md:text-4xl text-center font-bold md:pt-10'>Benefits of working with us :)</h1>
      <ul className="grid xl:px-80 md:grid-cols-1 md:grid-rows-4 md:pt-12 text-center">
 <li className='space-y-2'> 
-  <img src='finance.png' className='md:px-48 px-32'/>
+  <img src='finance.png' className='md:px-48 px-32' alt=''/>
   <h1 className='font-bold md:text-3xl text-yellow-500'>Professional development</h1>
 </li>
 <li className='space-y-2'>
-  <img src='finance (1).png' className='md:px-52 px-32'/>
+  <img src='finance (1).png' className='md:px-52 px-32' alt=''/>
   <h1 className='font-bold md:text-3xl text-yellow-500'>Financial benefits</h1>
 </li>
 <li className='space-y-2'>
-  <img src='finance (2).png' className='md:px-52 px-32'/>
+  <img src='finance (2).png' className='md:px-52 px-32' alt=''/>
   <h1 className='font-bold md:text-3xl text-yellow-500'>Retirement benefits</h1>
 </li>
 <li className='space-y-2'>
-  <img src='finance (3).png' className='md:px-52 px-32'/>
+  <img src='finance (3).png' className='md:px-52 px-32' alt=''/>
   <h1 className='font-bold md:text-3xl text-yellow-500'>Cost Savings</h1>
 </li>
 </ul>
@@ -235,7 +234,7 @@ if (!user.Name || !user.Number || !user.Message) {
     name='Number'
     value={user.Number} 
     placeholder="Enter Phone Number" 
-  maxLength={10}
+    maxLength={10}
     className='w-full p-1 rounded-r-md' 
     required
     onChange={data} 

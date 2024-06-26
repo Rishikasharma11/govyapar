@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {easeIn, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,11 +9,9 @@ import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
    Card,
-   CardHeader,
    CardBody,
-   CardFooter,
  } from "@material-tailwind/react";
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 
 
 function Affiliate(){
@@ -56,7 +54,7 @@ function Affiliate(){
       Name: '', Number:'', Message:''
   }
 )
-const [errorMsg, setErrorMsg] = useState("");
+// const [errorMsg, setErrorMsg] = useState("");
 let name, value
 const data = (e) =>
 {
@@ -68,10 +66,10 @@ const data = (e) =>
 const getdata = async (e) => 
 {
 if (!user.Name || !user.Number || !user.Message) {
-  setErrorMsg("Fill all fields");
+  // setErrorMsg("Fill all fields");
   return;
 }
-  setErrorMsg("");
+  // setErrorMsg("");
   
   const{Name, Number, Message} = user;
   e.preventDefault();
@@ -107,29 +105,7 @@ if (!user.Name || !user.Number || !user.Message) {
            alert("Error Ocurred")
        }
      }
-
-  var settings = {
-    loop: true,
-    center: true,
-    items: 3,
-    margin: 0,
-    autoplay: true,
-    dots:true,
-    autoplayTimeout: 8500,
-    smartSpeed: 450,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      1170: {
-        items: 3
-      }
-    }
-  }
-  
+     
    var settings = {
       autoplay: true,
       autoplaySpeed: 1000,
@@ -159,7 +135,7 @@ if (!user.Name || !user.Number || !user.Message) {
   return(
     <>
     <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
     <motion.div 
     initial={{x:-100, opacity:0}}
@@ -211,7 +187,7 @@ if (!user.Name || !user.Number || !user.Message) {
 
 {/* ---------------------------------------------Who are we?----------------------------------- */}
 <div className='container py-20 xl:px-40 md:py-32'>
-  <img src = "affiliate_question-mark.png" class="w-[25%] float-left md:px-10"/>
+  <img src = "affiliate_question-mark.png" class="w-[25%] float-left md:px-10" alt=''/>
   <h1 className='text-2xl text-yellow-500 md:text-3xl  text-left pb-3 font-bold'>Who are we?</h1>
   <p className='md:text-2xl text-xl text-justify text-black font-semibold'>GoVyapar is an assisted tax filing platform which ensures end to end tax compliance to taxpayers in India. We help customers reduce their tax liability up to 26%.</p>
 

@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect  } from 'react'
-import {easeIn, motion} from "framer-motion";
+import React, { useRef, useState } from 'react'
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -46,7 +46,7 @@ const ItrFiling = () => {
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -58,10 +58,10 @@ const ItrFiling = () => {
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -102,7 +102,7 @@ const ItrFiling = () => {
   return (
     <div>
       <div className=' max-w-full'><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt='whatsapp icon'/></a>
     </div>
     <motion.div
   initial={{x:100, opacity:0}}
@@ -142,17 +142,17 @@ const ItrFiling = () => {
       <ul className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-8">
 
         <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-          <img src="itrfiling1.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+          <img src="itrfiling1.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
         <h1 className='font-bold text-xl text-black'>1-1 Expert Assistance </h1>
        </li>
 
        <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-        <img src="itrfiling2.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+        <img src="itrfiling2.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'>Tax Return Preparation</h1>
        </li>
 
        <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-       <img src="itrfiling3.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+       <img src="itrfiling3.png" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'>Notices Management</h1>
        </li>
       </ul>
@@ -168,9 +168,9 @@ const ItrFiling = () => {
     
   <div className="pricing-box-container grid md:grid-cols-3 grid-rows-1 justify-center lg:mx-20 md:px-10 xl:px-60 mx-0">
     <motion.div initial={{y:100, opacity:0}}
-whileInView={{y:0, opacity:1}}
-transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
- className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
+    whileInView={{y:0, opacity:1}}
+    transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
+    className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
     <h5 className="text-lg font-bold text-black uppercase">Salary & HP Plan</h5>
       <p className="price text-4xl font-bold text-black">
         <sup className="text-base font-light text-black">₹</sup>
@@ -199,9 +199,9 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
     </motion.div> 
     
     <motion.div initial={{y:100, opacity:0}}
-whileInView={{y:0, opacity:1}}
-transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
- className="pricing-box bg-black text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
+      whileInView={{y:0, opacity:1}}
+      transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
+      className="pricing-box bg-black text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
       <h5 className="text-lg font-bold text-white uppercase">BUSINESS & PROFESSIONAL PLAN</h5>
       <p className="price text-4xl font-bold text-white">
         <sup className="text-base font-light text-white">₹</sup>
@@ -229,9 +229,9 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
     </motion.div>
   
   <motion.div initial={{y:100, opacity:0}}
-whileInView={{y:0, opacity:1}}
-transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
- className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
+    whileInView={{y:0, opacity:1}}
+    transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2}, ease:"easeIn", duration:1}}
+    className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 min-w-sm max-w-md h-auto pt-5 pb-20">
   <h5 className="text-lg font-bold text-black uppercase">CAPITAL GAIN PLAN</h5>
       <p className="price text-4xl font-bold text-black">
         <sup className="text-base font-light text-black">₹</sup>
@@ -262,7 +262,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
 
     {/* ---------------------------------------------------Para-1-------------------------------------- */}
     <div class="container max-w-full xl:w-[70%] lg:relative xl:left-[18%] xl:px-20 mx-0 py-10 md:pt-20 scroll-smooth rounded-md">
-      <img src='itr-filing-1.png' className='md:float-left md:pt-10 lg:pt-0 md:w-[45%]'></img>
+      <img src='itr-filing-1.png' className='md:float-left md:pt-10 lg:pt-0 md:w-[45%]' alt=''></img>
       <h1 className="md:text-4xl text-xl text-bold text-yellow-500">Income Tax Return Filing:<br/> Streamline Your Tax Compliance</h1>
       <motion.div 
       initial={{x:-100, opacity:0}}
@@ -332,10 +332,10 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
     whileInView={{x:0, opacity:1}}
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
     className="xl:px-40 px-10 py-4 w-full mt-2 md:pt-40 md:mt-32">
-  <img src='Tax-Planner4.jpg' className='lg:w-[50%] md:hidden xl:block sm:block px-20 lg:pl-40 md:float-left'></img>
+  <img src='Tax-Planner4.jpg' className='lg:w-[50%] md:hidden xl:block sm:block px-20 lg:pl-40 md:float-left' alt=''></img>
  <h1 class="md:text-3xl sm:text-xl xl:px-10 pt-3 md:mt-10 text-yellow-500 font-bold">Explore Tax-Saving Opportunities for ITR efiling</h1>
     <p className='text-md text-black xl:px-20 md:pt-3 jusrify-center'>At GoVyapar, we offer reliable tax planning expertise with a few clicks.</p>
-    <img src='Tax-Planner4.jpg' className='md:px-10 md:w-[60%] md:block sm:hidden xl:hidden md:float-right'></img>
+    <img src='Tax-Planner4.jpg' className='md:px-10 md:w-[60%] md:block sm:hidden xl:hidden md:float-right' alt=''></img>
     <ol className='xl:px-20 list-decimal font-semibold'>
       <li>GovVapar keeps you aligned to the ever-changing landscape of tax deductions.</li>
       <li>We offer specialized packages based on your income nature.</li>
@@ -356,7 +356,7 @@ transition={{delay:0.2, y:{type:"spring", stiffness:60}, opacity:{duration:0.2},
     whileInView={{x:0, opacity:1}}
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
     className="lg:px-32 px-10 md:mt-10 py-4 xl:mx-60 rounded-md md:px-10">
-    <img src="it-filing2.jpg" class="w-[50%] md:float-right"></img>
+    <img src="it-filing2.jpg" class="w-[50%] md:float-right" alt=''></img>
     <ul className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-4">
 
     <li class="bg-gradient-to-r from-yellow-400 to-yellow-700 p-3 shadow-md rounded-md cursor-pointer md:hover:-translate-x-1 bg-black ease-in duration-300 hover:scale-105">
@@ -529,7 +529,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
   <ul className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-4 xl:px-40">
 
 <li class="cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 shadow-md rounded-lg ">
-  <img src="itr-for-professionals.png" className='md:px-20 px-28'/>
+  <img src="itr-for-professionals.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 font-bold text-2xl'>Understanding the Importance of ITR Filing:</h1>
   <p className='text-sm text-black text-justify p-1'>ITR filing is not just a legal obligation; it's an opportunity for individuals and businesses to assess their financial health, declare their income, and claim tax deductions and exemptions. Filing ITR accurately and on time not only helps avoid penalties and legal repercussions but also serves as a tool for financial planning and wealth management. By maintaining comprehensive records of income and expenses, taxpayers can gain valuable insights into their financial standing and make informed decisions to optimize their tax liabilities.</p>
@@ -537,7 +537,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
 </li>
 
 <li class="cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 shadow-md rounded-lg bg-black">
-<img src="itr-e-filing.png" className='md:px-20 px-28'/>
+<img src="itr-e-filing.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 font-bold text-2xl'>Utilizing Online Platforms for ITR Filing:</h1>
   <p className='text-sm text-white text-justify p-1'>With the advent of technology, filing ITR has become more convenient and accessible than ever before. Online platforms and e-filing portals provided by the Income Tax Department offer a user-friendly interface for taxpayers to file their returns from the comfort of their homes. These platforms also provide guidance and assistance at every step of the filing process, making it easier for individuals and businesses to comply with tax laws and regulations.
@@ -546,7 +546,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
 </li>
 
 <li class="cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 shadow-md rounded-lg ">
-<img src="itr-for-traders.png" className='md:px-20 px-28'/>
+<img src="itr-for-traders.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 font-bold text-2xl'>Utilizing Online Platforms for ITR Filing:</h1>
   <p className='text-sm text-black text-justify p-1'>With the advent of technology, filing ITR has become more convenient and accessible than ever before. Online platforms and e-filing portals provided by the Income Tax Department offer a user-friendly interface for taxpayers to file their returns from the comfort of their homes. These platforms also provide guidance and assistance at every step of the filing process, making it easier for individuals and businesses to comply with tax laws and regulations.

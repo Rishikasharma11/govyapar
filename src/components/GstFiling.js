@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -46,7 +46,7 @@ const GstFiling = () => {
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -58,10 +58,10 @@ const GstFiling = () => {
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -231,7 +231,7 @@ const GstFiling = () => {
    <>
    <div>
    <div className=' max-w-full'><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
     <motion.div
   initial={{x:100, opacity:0}}
@@ -271,17 +271,17 @@ placeholder="Enter Phone Number"
 <ul className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-8">
 
   <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-      <img src="gstfiling1.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+      <img src="gstfiling1.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'>CA guided filing</h1>
       </li>
 
       <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-      <img src="gstfiling2.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+      <img src="gstfiling2.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'> End to end tax advisory</h1>
       </li>
   
        <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-       <img src="gstfiling3.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+       <img src="gstfiling3.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
        <h1 className='font-bold text-xl text-black'> GST credit reconciliation</h1>
        </li>
        </ul>
@@ -418,7 +418,7 @@ className="pricing-box bg-yellow-500 text-center shadow-md rounded-md p-6 m-2 mi
     whileInView={{x:0, opacity:1}}
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
     className='container max-w-full mx-0 mt-10 xl:pl-40 pt-20 xl:px-60 scroll-smooth'>
-    <img src="./consultant.png" className='md:float-right md:pt-40 lg:w-[40%] md:w-[45%]'/>
+    <img src="./consultant.png" className='md:float-right md:pt-40 lg:w-[40%] md:w-[45%]' alt=''/>
     <h1 className='sm:text-3xl md:text-3xl lg:text-4xl font-bold lg:px-40 text-black leading-tight md:px-10 sm:hidden block'>What do we offer as trusted <br/>GST Filing Platform:</h1>
     <h1 className='sm:text-3xl md:text-3xl lg:text-4xl font-bold xl:px-40 text-black leading-tight md:px-10 sm:block hidden text-center'>What do we offer as trusted GST Filing Platform:</h1>
     <p>
@@ -498,7 +498,7 @@ className="xl:px-40 lg:px-40 px-10 py-4">
           <h1 className='font-bold text-xl'> GSTR-9</h1></li>
         </ul> 
     <div className='md:py-32 py-5 md:px-40'>
-       <img src='arrow.png' className='float-left md:w-[15%] w-[10%]'/>
+       <img src='arrow.png' className='float-left md:w-[15%] w-[10%]' alt=''/>
        <div className='md:grid md:grid-cols-1 md:grid-rows-2'>
        <p className="md:text-2xl text-xl text-bold">Start your tax journey with us today!</p>
        <form class="flex w-full pt-2">
@@ -530,7 +530,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
   <ul className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-4 xl:px-40">
 
 <li class="cursor-pointer shadow-md rounded-lg ">
-  <img src="itr-for-professionals.png" className='md:px-20 px-28'/>
+  <img src="itr-for-professionals.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 font-bold text-2xl'>Understanding the Importance of ITR Filing:</h1>
   <p className='text-sm text-black text-justify p-1'>ITR filing is not just a legal obligation; it's an opportunity for individuals and businesses to assess their financial health, declare their income, and claim tax deductions and exemptions. Filing ITR accurately and on time not only helps avoid penalties and legal repercussions but also serves as a tool for financial planning and wealth management. By maintaining comprehensive records of income and expenses, taxpayers can gain valuable insights into their financial standing and make informed decisions to optimize their tax liabilities.
@@ -539,7 +539,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
 </li>
 
 <li class="cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 shadow-md rounded-lg bg-black">
-<img src="itr-e-filing.png" className='md:px-20 px-28'/>
+<img src="itr-e-filing.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 text-center font-bold text-2xl'>Seeking Expert Assistance:</h1>
   <p className='text-sm text-white text-justify p-1'>While businesses can file GST returns independently, seeking expert advice from tax consultants or chartered accountants can provide added assurance and efficiency. Tax professionals have the knowledge and expertise to navigate complex GST laws, address compliance issues, and optimize tax planning strategies to minimize tax liabilities and maximize savings. By partnering with experienced tax consultants, businesses can streamline GST compliance and focus on their core operations with confidence.
@@ -548,7 +548,7 @@ class="container max-w-full mt-20 pt-10 mx-0 scroll-smooth">
 </li>
 
 <li class="cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 shadow-md rounded-lg ">
-<img src="itr-for-traders.png" className='md:px-20 px-28'/>
+<img src="itr-for-traders.png" className='md:px-20 px-28' alt=''/>
   <div className="p-3">
   <h1 className='text-yellow-500 font-bold text-2xl'>Utilizing Technology for GST Compliance:</h1>
   <p className='text-sm text-black text-justify p-1'>With the advent of technology, filing ITR has become more convenient and accessible than ever before. Online platforms and e-filing portals provided by the Income Tax Department offer a user-friendly interface for taxpayers to file their returns from the comfort of their homes. These platforms also provide guidance and assistance at every step of the filing process, making it easier for individuals and businesses to comply with tax laws and regulations.

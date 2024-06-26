@@ -1,31 +1,16 @@
 import React, { useRef, useState } from 'react'
-import MediaQuery from 'react-responsive'
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 import { Link } from 'react-router-dom';
-import {easeIn, motion} from "framer-motion";
-import { storage } from '../firebase.config';
+import { motion} from "framer-motion";
 import emailjs from '@emailjs/browser';
-import { Fade, Zoom  } from 'react-reveal';
+import { Fade } from 'react-reveal';
 import { TypeAnimation } from 'react-type-animation';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import {fadeIn} from '../variants';
 
 function Home(){
-  // ----------------------start filing--------------------
-  // const[number, setNumber] = useState(
-  //   {
-  //     Number:''
-  //   }
-  // )
-  // const numberData = (e) => 
-  // {
-  //   console.log(numberData)
-  //   name = e.target.name;
-  //   value = e.target.value;
-  //   setUser({...numberData, [name]:value});
-  // }
   // -----------------------------NumberNotify-------------------
   const NumberNotify = () => {
     toast.success('Thanks for filing, our team will connect soon', {
@@ -43,9 +28,6 @@ function Home(){
   
   // -----------------------------exp and clients----------------------
   const[counterState, setCounterState ] = useState(false)
-
-  // ------------------------------about us---------------------------------
-   const[aboutLink, setAboutLink] = useState(false)
 
    // --------------------------------------------subscribe to our newsletter--------------------------------
    const form = useRef();
@@ -86,7 +68,7 @@ function Home(){
         Name: '', Number:'', Message:''
     }
 )
-const [errorMsg, setErrorMsg] = useState("");
+// const [errorMsg, setErrorMsg] = useState("");
 let name, value
 const data = (e) =>
 {
@@ -98,10 +80,10 @@ const data = (e) =>
 const getdata = async (e) => 
 {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -142,7 +124,7 @@ const getdata = async (e) =>
   <>
   <div>
     <a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
   {/* --------------------------------------------Main Heading--------------------------  */}
   <motion.div
@@ -209,7 +191,7 @@ className='container max-w-full justify-center xl:px-40 2xl:px-60'>
 {/* <div class="relative flex flex-col mt-6 bg-white hover:bg-black shadow-md bg-clip-border rounded-xl"> */}
 
 <Link to="/itrFiling">
-  <img src="photo3.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10'/> 
+  <img src="photo3.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10' alt=''/> 
   <div class="group flex flex-col relative cursor-pointer items-center justify-center overflow-hidden transition-shadow shadow-xl hover:shadow-xl hover:shadow-black/30 hover:rounded-xl border-2 hover:border-none border-black hover:bg-black rounded-2xl">
 
 <div class="absolute inset-0  group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
@@ -233,7 +215,7 @@ className='container max-w-full justify-center xl:px-40 2xl:px-60'>
 </Link>
 
 <Link to ="/tax-planner">
-<img src="photo2.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10'/> 
+<img src="photo2.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10' alt=''/> 
   <div class="group flex flex-col relative cursor-pointer items-center justify-center overflow-hidden transition-shadow shadow-xl hover:shadow-xl hover:shadow-black/30 hover:rounded-xl border-2 hover:border-none border-black hover:bg-black rounded-2xl">
 
 <div class="absolute inset-0  group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
@@ -257,7 +239,7 @@ className='container max-w-full justify-center xl:px-40 2xl:px-60'>
 </Link>
 
 <Link to ="/consultation">
-  <img src="photo1.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10'/> 
+  <img src="photo1.png" className='opacity-100  bg-black w-[30%] px-2 py-1 mx-auto rounded-lg relative top-10 z-10' alt=''/> 
   <div class="group flex flex-col relative cursor-pointer items-center justify-center overflow-hidden transition-shadow shadow-xl hover:shadow-xl hover:shadow-black/30 hover:rounded-xl border-2 hover:border-none border-black hover:bg-black rounded-2xl">
 
 <div class="absolute inset-0  group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
@@ -291,7 +273,7 @@ initial={{x:-100, opacity:0}}
 whileInView={{x:0, opacity:1}}
 transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
 className='container max-w-full mx-0 mt-[600px] md:mt-40 xl:pl-60 pt-20 xl:px-32 md:px-16 scroll-smooth'>
-<img src="./consultant.png" className='md:float-right md:pt-20 md:w-[50%] lg:w-[40%]'/>
+<img src="./consultant.png" className='md:float-right md:pt-20 md:w-[50%] lg:w-[40%]' alt=''/>
     <h3 className='text-lg md:text-2xl font-semibold text-yellow-500'>WELCOME TO GOVYAPAR</h3>
     <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight'>Tax Consultant: Key to Financial Success</h1>
     <p className='text-lg text-justify'>
@@ -314,13 +296,12 @@ transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}
 </motion.section>
 </Fade>
 {/* -------------------------------------------------About-us---------------------------- */}
-{/* {aboutLink && */}
 <motion.section
 initial={{x:-100, opacity:0}}
 whileInView={{x:0, opacity:1}}
 transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
 className='container max-w-full mx-0 pt-10 md:pt-40 md:px-16 xl:pr-60 xl:px-40 scroll-smooth overflow-hidden'>
-<img src="Why Do.png" className='md:float-left md:w-[60%] xl:w-[50%]'/>
+<img src="Why Do.png" className='md:float-left md:w-[60%] xl:w-[50%]' alt=''/>
     <h3 className='text-lg md:text-3xl font-semibold text-yellow-500'>ABOUT US</h3>
     <h1 className='text-xl md:text-3xl lg:text-4xl font-bold text-black leading-tight'>Expert Financial Guidance Tailored To Your Success</h1>
     <p className='text-lg text-justify '>
@@ -331,7 +312,7 @@ className='container max-w-full mx-0 pt-10 md:pt-40 md:px-16 xl:pr-60 xl:px-40 s
     Our experienced professionals specialize in financial planning, tax optimization, and investment strategies. We understand that each individual and business has unique financial goals and challenges. That's why we offer personalized services, tailoring our expertise to meet your specific needs and aspirations.
     </p>
 </motion.section>
-{/* } */}
+
 {/* ------------------------------------------Experience and Clients------------------------------------ */}
 <motion.section
 initial={{x:-100, opacity:0}}
@@ -353,7 +334,7 @@ className='container max-w-full mx-0 py-10 md:mt-40 md:mb-30 pb-20 scroll-smooth
   </div>
   </div>
   <div class="sm:py-4 md:py-10 lg:px-20 xl:px-60 px-8">
-  <img src='experience.jpg' className='items-center md:float-left sm:px-20 md:px-0 md:w-[30%]'/>
+  <img src='experience.jpg' className='items-center md:float-left sm:px-20 md:px-0 md:w-[30%]' alt=''/>
   <h1 className='md:text-4xl xl:text-5xl text-xl text-yellow-500 font-bold sm:pt-2 md:pt-20'>Reduce your tax liability up to 26%</h1>
   <ul class="text-xl sm:text-md font-semibold text-black md:space-x-5 py-3 md:pt-10 md:flex">
       <li className='style-none'><i class="fas fa-check-circle"></i> On-demand tax support</li>
@@ -651,7 +632,7 @@ transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}
 </motion.ul>
 <div className='flex lg:px-36 px- pt-3 space-x-10 text-white cursor-pointer justify-center '>
 <ul className='text-justify '>
-  <li onClick = {() => setAboutLink(true)}  className='hover:text-yellow-500'><i class="fa-solid fa-arrow-right text-yellow-500 text-sm"></i> About Us</li>
+  <li className='hover:text-yellow-500'><i class="fa-solid fa-arrow-right text-yellow-500 text-sm"></i> About Us</li>
   <Link to='/contact'> <li className='hover:text-yellow-500'><i class="fa-solid fa-arrow-right text-yellow-500 text-sm"></i> Contact Us</li></Link>
   <Link to='/career'><li className='hover:text-yellow-500'><i class="fa-solid fa-arrow-right text-yellow-500 text-sm"></i> Careers</li></Link>
   <Link to='/pricing'> <li className='hover:text-yellow-500'><i class="fa-solid fa-arrow-right text-yellow-500 text-sm"></i> Packages</li></Link>

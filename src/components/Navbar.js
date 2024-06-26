@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import {easeIn, motion} from "framer-motion";
-
-//  import logo from './images/logo.png';
 
 const Navbar = () => {
-  const [nav, hideNav] = useState("");
   let [open,setOpen]=useState(false); 
 
   return (  
@@ -16,7 +12,7 @@ const Navbar = () => {
         <span className='text-3xl text-white mr-1 pt-2'>
         
         </span>
-        <Link to ='/home'><img src='govyapar logo.png' className='w-30 h-16'/></Link>
+        <Link to ='/home'><img src='govyapar logo.png' className='w-30 h-16' alt='govyapar logo'/></Link>
       </div>
       
       <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>

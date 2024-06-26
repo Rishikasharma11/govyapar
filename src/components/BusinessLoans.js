@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import {motion} from "framer-motion";
-import { storage } from '../firebase.config';
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -61,7 +60,7 @@ function BusinessLoans () {
         Name: '', Number:'', Message:''
     }
   )
-  const [errorMsg, setErrorMsg] = useState("");
+  // const [errorMsg, setErrorMsg] = useState("");
   let name, value
   const data = (e) =>
   {
@@ -73,10 +72,10 @@ function BusinessLoans () {
   const getdata = async (e) => 
   {
   if (!user.Name || !user.Number || !user.Message) {
-    setErrorMsg("Fill all fields");
+    // setErrorMsg("Fill all fields");
     return;
   }
-    setErrorMsg("");
+    // setErrorMsg("");
     
     const{Name, Number, Message} = user;
     e.preventDefault();
@@ -172,7 +171,7 @@ function BusinessLoans () {
         Every business needs capital to grow and at Govyapar, we ensure you get the best of what you need. Whether you are launching or expanding your business, we pledge to give you best business loan offers.
         </p>
         <br/>
-        <img src="Business Loan main.jpg" className='md:w-[40%] lg:w-[30%] px-4 pt-2'/>
+        <img src="Business Loan main.jpg" className='md:w-[40%] lg:w-[30%] px-4 pt-2' alt=''/>
   </div>
 
   <div className='md:float-right md:pl-10 md:w-[60%] md:hidden block'>
@@ -287,7 +286,7 @@ function BusinessLoans () {
         whileInView={{x:0, opacity:1}}
         transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
         className='container max-w-full mx-0 md:mt-20 xl:pl-60 pt-20 xl:px-40 md:px-16 scroll-smooth'>
-        <img src="./Business mail steps.jpg" className='md:float-right md:w-[40%] lg:w-[45%] lg:px-20 xl:px-32'/>
+        <img src="./Business mail steps.jpg" className='md:float-right md:w-[40%] lg:w-[45%] lg:px-20 xl:px-32' alt=''/>
         <h1 className='text-lg md:text-2xl font-semibold text-yellow-500'>Apply now in 3 easy steps:</h1>
         <p><motion.ul
        initial={{x:-100, opacity:0}}
@@ -311,32 +310,32 @@ function BusinessLoans () {
              className='grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-3 gap-3 md:gap-6 md:space-y-2'>
 
               <li className='md:flex md:space-x-5'>
-                <img src='time_5843071.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='time_5843071.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-xl text-white pt-2'>Apply in few minutes</h1>
               </li>
 
               <li className='md:flex md:space-x-5'>
-                <img src='charging_9148372.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='charging_9148372.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-xl text-white pt-2'>Fast Approval</h1>
               </li>
 
               <li className='md:flex md:space-x-5'>
-                <img src='money_12714253.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='money_12714253.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-md :text-xl text-white pt-2'>Tenure up to 60 months</h1>
               </li>
 
               <li className='md:flex md:space-x-5'>
-                <img src='safe-box_2506920.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='safe-box_2506920.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-md :text-xl text-white pt-2'>Get money in 2-4 working days</h1>
               </li>
 
               <li className='md:flex md:space-x-5'>
-                <img src='placeholder_819814.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='placeholder_819814.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-md :text-xl text-white pt-2'>No Branch Visit</h1>
                 </li>
 
                 <li className='md:flex md:space-x-5'>
-                <img src='certificate_9039471.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]'/>
+                <img src='certificate_9039471.png' className='bg-white shadow-sm border-1 p-2 md:p-4 rounded-lg w-[40%] md:w-[25%]' alt=''/>
                 <h1 className='text-lg lg:text-md :text-xl text-white pt-2'>An ISO certified company</h1>
                 </li>
              </motion.ul>

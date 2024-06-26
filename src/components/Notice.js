@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-import { Tabs, TabsHeader, TabsBody, Tab, TabPanel,} from "@material-tailwind/react";
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -46,7 +45,7 @@ function Notice(){
        Name: '', Number:'', Message:''
    }
  )
- const [errorMsg, setErrorMsg] = useState("");
+//  const [errorMsg, setErrorMsg] = useState("");
  let name, value
  const data = (e) =>
  {
@@ -58,10 +57,10 @@ function Notice(){
  const getdata = async (e) => 
  {
  if (!user.Name || !user.Number || !user.Message) {
-   setErrorMsg("Fill all fields");
+  //  setErrorMsg("Fill all fields");
    return;
  }
-   setErrorMsg("");
+  //  setErrorMsg("");
    
    const{Name, Number, Message} = user;
    e.preventDefault();
@@ -102,7 +101,7 @@ function Notice(){
   return(
     <>
      <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
     <div className='text-center'>
     <motion.h1 
@@ -136,7 +135,7 @@ function Notice(){
 
    {/* ----------------------------------------Are you filing an IT return because of the following reasons?-------------- */}
     <div class='bg-black max-w-full md:my-20 my-4 pb-3 md:px-32 px-3 mx-0 '>
-    <img src='it notice.png' className=' px-20 md:px-0 md:float-right'></img>
+    <img src='it notice.png' className=' px-20 md:px-0 md:float-right' alt=''></img>
     <motion.h1 
     initial={{x:-100, opacity:0}}
     whileInView={{x:0, opacity:1}}
@@ -169,7 +168,7 @@ function Notice(){
 
     {/* ------------------------------------When May Tax Payers Get An Income Tax Notice----------------------------- */}
     <div className='my-20 max-w-full mx-0 md:px-20 lg:px-40 px-3'>
-    <img src='it notice2.png' className='xl:w-[50%] md:w-[60%] px-20 xl:pr-40 md:pt-32 md:float-right'></img>
+    <img src='it notice2.png' className='xl:w-[50%] md:w-[60%] px-20 xl:pr-40 md:pt-32 md:float-right' alt=''></img>
     <motion.h1 initial={{x:-100, opacity:0}}
     whileInView={{x:0, opacity:1}}
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
@@ -213,7 +212,7 @@ function Notice(){
 
  {/* ------------------------------------------------------BASIC NOTICES------------------------ */}
     <h1 class="md:text-3xl lg:text-4xl sm:text-xl md:px-20 lg:pr-[560px] pt-3 md:mt-40 text-black font-bold pl-12 text-left">BASIC NOTICES:</h1>
-    <img src='it notice3.jpg' className='xl:float-right hidden xl:block w-[30%] xl:pr-32'/>
+    <img src='it notice3.jpg' className='xl:float-right hidden xl:block w-[30%] xl:pr-32' alt=''/>
     <motion.div 
     initial={{y:100, opacity:0}}
     whileInView={{y:0, opacity:1}}
@@ -250,7 +249,7 @@ function Notice(){
 
     {/* ------------------------------------------------------Get Expert Guidance-------------------------------- */}
     <h1 class="xl:text-4xl md:text-3xl sm:text-xl md:px-20 xl:pl-[600px] md:pt-20 text-black font-bold text-left pt-5">Get Expert Guidance:</h1>
-    <img src='it notice4.jpg' className='xl:block hidden xl:float-left w-[40%]'/>
+    <img src='it notice4.jpg' className='xl:block hidden xl:float-left w-[40%]' alt=''/>
     <motion.div 
     initial={{y:100, opacity:0}}
     whileInView={{y:0, opacity:1}}
@@ -330,7 +329,7 @@ function Notice(){
     {/* -------------------------------------------------------APPEAL AND EX-PARTE ORDER NOTICES---------------- */}
     <h1 class="xl:text-4xl md:text-3xl sm:text-xl xl:px-80 md:pt-20 text-yellow-500 font-bold text-center pt-5">APPEAL AND EX-PARTE ORDER NOTICES</h1>
     <p className='text-md text-black xl:px-80 md:pt-3 text-justify'>A disagreement between the taxpayers and tax authorities on tax-related decisions leads to an appeal. It entails a legal process to resolve the dispute and ensure fairness. Appeal cases can play a key role in interpreting tax laws and setting precedents for future cases.<br/>A taxpayer can file appeals for different reasons, such as:</p>
-    <img src='notice2.jpg' className='md:w-[50%] px-20 xl:pr-60 md:float-right '></img>
+    <img src='notice2.jpg' className='md:w-[50%] px-20 xl:pr-60 md:float-right ' alt=''></img>
     <motion.ul 
     initial={{x:-100, opacity:0}}
     whileInView={{x:0, opacity:1}}
@@ -622,8 +621,8 @@ className="grid grid-rows-1 md:grid-cols-5 md:grid-rows-1 gap-3 lg:gap-5">
     transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
     className="px-1 py-4 w-full mt-2 md:pt-40 md:mt-32 md:px-40 xl:px-60">
     <h1 class="lg:text-4xl md:text-3xl sm:text-xl pt-3 md:mt-10 text-yellow-500 font-bold text-right">Why Choose GoVyapar as Your Guide</h1>  
-    <img src='notice3.jpg' className='md:w-0 w-[25%] relative top-10 float-right'/>    
-    <img src='notice3.jpg' className='md:w-[50%] relative bottom-20 px-20 xl:px-32 w-0 md:float-left'></img>
+    <img src='notice3.jpg' className='md:w-0 w-[25%] relative top-10 float-right' alt=''/>    
+    <img src='notice3.jpg' className='md:w-[50%] relative bottom-20 px-20 xl:px-32 w-0 md:float-left' alt=''></img>
     <p className='text-sm text-black md:pt-3 text-justify'>At GoVyapar, we offer reliable tax planning expertise with a few clicks.</p>
     <ol className=' list-decimal font-semibold'>
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import {easeIn, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
@@ -45,7 +45,7 @@ function TaxPlanner(){
        Name: '', Number:'', Message:''
    }
  )
- const [errorMsg, setErrorMsg] = useState("");
+//  const [errorMsg, setErrorMsg] = useState("");
  let name, value
  const data = (e) =>
  {
@@ -57,10 +57,10 @@ function TaxPlanner(){
  const getdata = async (e) => 
  {
  if (!user.Name || !user.Number || !user.Message) {
-   setErrorMsg("Fill all fields");
+  //  setErrorMsg("Fill all fields");
    return;
  }
-   setErrorMsg("");
+  //  setErrorMsg("");
    
    const{Name, Number, Message} = user;
    e.preventDefault();
@@ -101,7 +101,7 @@ function TaxPlanner(){
   return(
     <>
    <div><a href='https://wa.me/919808030923'>
-    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10'/></a>
+    <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt=''/></a>
     </div>
     <motion.div
   initial={{x:100, opacity:0}}
@@ -131,7 +131,7 @@ initial={{x:-100, opacity:0}}
 whileInView={{x:0, opacity:1}}
 transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
 class='float-right max-w-full my-5 pb-3 xl:px-32 px-3 mx-0'>
-<img src='Tax-Planner1.jpg' className='xl:w-[35%] md:w-[40%] px-20 md:px-0 xl:pl-48 md:pt-20 xl:pt-32 md:float-left'></img>
+<img src='Tax-Planner1.jpg' className='xl:w-[35%] md:w-[40%] px-20 md:px-0 xl:pl-48 md:pt-20 xl:pt-32 md:float-left' alt=''></img>
 <h1 class="sm:text-xl md:text-3xl xl:text-5xl md:pt-20 text-yellow-500 font-bold lg:pr-32">Tax Planning Made Easy with Govyapar's Tax Planner</h1>
 <ul className='text-md font-semibold text-black md:space-y-5 space-2 md:pt-20 pt-3'>
         <li className='style-none'><i class="fas fa-check-circle text-black md:text-xl"></i> Reduce your tax liability up to 26%</li>
@@ -168,7 +168,7 @@ class='float-right max-w-full my-5 pb-3 xl:px-32 px-3 mx-0'>
     {/* --------------------------------------Importance of Tax Planning- Why Should You Seek Advice from a Tax Planner-------------- */}
     <div class= 'max-w-full md:mt-20'>
     <div class='bg-black float-right w-full md:my-20 my-4 pb-3 xl:px-32 px-3 mx-0 text-justify'>
-    <img src='Tax-Planner2.png' className='md:w-[45%] px-20 md:pt-20 md:px-0 md:float-right'></img>
+    <img src='Tax-Planner2.png' className='md:w-[45%] px-20 md:pt-20 md:px-0 md:float-right' alt=''></img>
     <motion.h1 
     initial={{x:-100, opacity:0}}
     whileInView={{x:0, opacity:1}}
@@ -201,7 +201,7 @@ class='float-right max-w-full my-5 pb-3 xl:px-32 px-3 mx-0'>
     {/* ---------------------------------------------Why Choose GoVyapar as Your Guide---------------------------------------------- */}
 <div className="xl:px-40 px-10 py-4 max-w-full mt-2 md:pt-40 md:mt-32">
  <h1 class="md:text-3xl sm:text-xl xl:text-4xl  xl:px-40 pt-3 md:mt-10 text-center text-yellow-500 font-bold">Why Choose GoVyapar as Your Guide</h1>
-  <img src='Tax-Planner4.jpg' className='md:w-[50%] xl:px-32 md:float-left'></img>
+  <img src='Tax-Planner4.jpg' className='md:w-[50%] xl:px-32 md:float-left' alt=''></img>
     <p className='text-md text-black xl:px-40 md:pt-6 lg:pt-32'>At GoVyapar, we offer reliable tax planning expertise with a few clicks.</p>
     <ol className='md:px-20  list-decimal font-semibold'>
       <li>Solution for all income types (Salaried, Business, Freelancers, Share traders, Futures and Option traders, and many more)</li>
@@ -282,17 +282,17 @@ class="pl-4 md:space-y-2">
 <ul className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-8">
 
   <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-      <img src="tax1.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+      <img src="tax1.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'>Tax Saving Strategies</h1>
       </li>
 
       <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-      <img src="tax2.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+      <img src="tax2.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
       <h1 className='font-bold text-xl text-black'> Save time and effort</h1>
       </li>
   
        <li class="bg-transparent p-3 cursor-pointer md:hover:-translate-x-1 ease-in duration-300 hover:scale-105 border-1">
-       <img src="tax3.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full'/>
+       <img src="tax3.jpg" className='mx-auto xl:w-[50%] sm:w-[30%] md:w-[60%] lg:w-full' alt=''/>
        <h1 className='font-bold text-xl text-black'> Ensure Tax Compliance</h1>
        </li>
        </ul>
