@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react'
 import {motion} from "framer-motion";
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, Flip, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function NGO(){
+
+  const[open, setOpen] = useState(false);
 
   // --------------------------------------------subscribe to our newsletter--------------------------------
   const form = useRef();
@@ -103,16 +105,19 @@ function NGO(){
      <div>
     <a href='https://wa.me/919808030923'>
     <img src='WhatsappIcon.png' className='fixed w-[20%] md:w-[13%] lg:w-[10%] right-0 top-[520px] cursor-pointer z-10' alt='ngo'/></a>
+    </div>
 
-    {/* ---------------------------------------------Register form Ngo-------------------------------- */}
-    <motion.div 
-    initial={{x:-100, opacity:0}}
-    whileInView={{x:0, opacity:1}}
-    transition={{delay:0.10, x:{type:"spring", stiffness:60}, opacity:{duration:0.8}, ease:"easeIn", duration:1}}
-    className='pt-40 px-2 md:px-10 max-w-full mx-0 '>
-    <div className='md:float-right px-10 sm:px-32 md:px-10 lg:px-28 pt-0 lg:pt-5'>
-      <form className='shadow-md shadow-black bg-white px-5 py-4 text-center hidden md:block'>
-        <h1 className='text-yellow-500 font-bold text-lg underline'>Register Your NGO Today </h1>
+   {/* -------------------------------------Mobile devices Registration ngo-------------------------------------/ */}
+   <div className='max-w-full mx-0 px-8 block md:hidden pt-32'>
+ <div class="relative flex flex-col text-gray-700 bg-[#C0C0C0] shadow-xl z-[-1]">
+  <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-clip-border">
+  </div>
+  <div class="p-6 text-center">
+    <h4 class="block mb-2 font-sans text-2xl sm:text-3xl antialiased leading-snug tracking-normal font-bold text-black">
+    Register Your NGO Today
+    </h4>
+    <p>
+        <form className='py-4 text-center'>
         <label className='pt-2'>Email</label><br/>
         <input type='email'
          placeholder='Enter your Email'
@@ -129,41 +134,76 @@ function NGO(){
          placeholder='Enter your City/Pincode'
          className='rounded-sm p-1 border-1'/>
          <br/>
-         <button className='items-center bg-black text-white p-2 mt-3 rounded-md'>Book an Appointment Now</button>
       </form>
-    </div>
-        {/* ---------------------------------------------Registration ngo-------------------------------- */}
-    <div className='px-2'>
-      <h1 className="text-3xl md:text-4xl lg:txt-5xl xl:text-6xl font-bold text-black md:text-left py-4 pl-2 md:pl-10 lg:pl-16 xl:pl-28">Register Your NGO with Govyapar</h1>
-      <ul className='text-lg md:text-xl space-y-2 pb-3 text-justify md:text-left py-2 pl-2 md:pl-10 lg:pl-16 xl:pl-28'>
+    </p>
+  </div>
+  <div class="flex justify-center p-6 py-2 mb-4 gap-7">
+  <button className='items-center bg-black text-white p-2 rounded-md'>Book an Appointment Now</button>
+  </div>
+</div>
+</div>
+<div className=' bg-[#E0E0E0] relative bottom-60 z-[-2] pb-10 pt-80 px-4 block md:hidden'>
+  <h1 className='text-2xl font-extrabold'>Register Your NGO with Govyapar</h1>
+  <h2 className="py-6 text-2xl font-semibold">
+  <ul className='text-lg md:text-xl space-y-2 pb-3 text-justify md:text-left py-2'>
       <li><i class="fas fa-check-square text-yellow-500"></i> Get started with your NGO registration. Bylaws/Deed/MOA drafting and filing completed within 7 business days. <span className='font-bold text-blue-950'>T&C*</span></li>
       <li><i class="fas fa-check-square text-yellow-500"></i> Book a slot and consult an NGO expert, get complete guidance to set up your NGO</li>
       </ul>
+  </h2> 
+</div>
 
-      <form className='shadow-md shadow-black bg-white px-5 py-4 text-center md:hidden block'>
-        <h1 className='text-yellow-500 font-bold text-lg underline'>Register Your NGO Today </h1>
-        <label className='pt-2'>Email</label><br/>
-        <input type='email'
-         placeholder='Enter your Email'
-         className='rounded-sm p-1 border-1'/>
-        <br/>
-        <label className='pt-2'>Mobile Number</label><br/>
-        <input type='tel'
+{/* ------------------------------------------------------MEDIUM AND LARGE SCREN- Registration ngo--------------------------------- */}
+<div className="w-full mx-0 md:block hidden md:pt-28 pt-12">
+  <div className='bg-[#E0E0E0] float-left w-[45%] h-screen pl-10 lg:pl-32 pt-24 xl:pl-52 2xl:pl-80'>
+  <div class="relative flex flex-col text-gray-700 bg-[#C0C0C0] shadow-xl left-8 lg:left-12">
+  <div class="relative mt-4 overflow-hidden text-gray-700 bg-clip-border">
+  </div>
+  <div class="p-6 text-center">
+    <h4 class="block mb-2 font-sans text-2xl lg:text-3xl antialiased leading-snug tracking-normal font-bold text-black">
+    Register Your NGO Today <br/>
+    </h4>
+
+    <p>
+      <form className='py-4 text-center hidden md:block'>
+      <label className='pt-2'>Email</label><br/>
+      <input type='email'
+       placeholder='Enter your Email'
+       className='rounded-sm p-1 border-1'/>
+      <br/>
+      <label className='pt-2'>Mobile Number</label><br/>
+      <input type='tel'
         placeholder="Enter Phone Number" 
         maxLength={10}
-         className='rounded-sm p-1 border-1'/>
-        <br/>
-        <label className='pt-2'>City/Pincode</label><br/>
-        <input type=''
-         placeholder='Enter your City/Pincode'
-         className='rounded-sm p-1 border-1'/>
-         <br/>
-         <button className='items-center bg-black text-white p-2 mt-3 rounded-md'>Book an Appointment Now</button>
-      </form>
-    </div>
-    </motion.div>
+       className='rounded-sm p-1 border-1'/>
+      <br/>
+      <label className='pt-2'>City/Pincode</label><br/>
+      <input type=''
+       placeholder='Enter your City/Pincode'
+       className='rounded-sm p-1 border-1'/>
+       <br/>
+    </form>
+    </p>
+  </div>
+  <div class="flex justify-center p-6 py-2 mb-4 gap-7">
+  <button className='items-center bg-black text-white p-2 rounded-md'>Book an Appointment Now</button>
+  </div>
+</div>
+  </div>
 
-    </div>
+  <div className='bg-white h-screen px-10 pt-3 pr-28 lg:pt-16 lg:pr-32 xl:pr-52 2xl:pr-80'>
+  <div className='relative bottom-60 pb-10 md:pt-[340px] lg:pt-[310px] xl:pt-[] px-7 left-10 lg:left-20 lg:px-10 overflow-hidden'>
+  <h1 className='md:text-3xl lg:text-4xl xl:text-6xl font-extrabold'>Register Your NGO with Govyapar</h1>
+  <h2 className="py-5 text-xl lg:text-2xl font-semibold">
+    <ul className='text-lg md:text-xl space-y-2 pb-3 text-justify md:text-left py-2'>
+      <li><i class="fas fa-check-square text-yellow-500"></i> Get started with your NGO registration. Bylaws/Deed/MOA drafting and filing completed within 7 business days. <span className='font-bold text-blue-950'>T&C*</span></li>
+      <li><i class="fas fa-check-square text-yellow-500"></i> Book a slot and consult an NGO expert, get complete guidance to set up your NGO</li>
+      </ul>
+  </h2>
+
+</div>
+  </div>
+</div>
+
 
     {/* ---------------------------------------------------NGO Types------------------------------------------------- */}
     <div className='pt-20 md:pt-40 md:px-10 lg:px-32'>
@@ -207,8 +247,8 @@ function NGO(){
     </div>
 
     {/* -------------------------------------------------------NGO Side Navbar----------------------- */}
-    {/* <div className='pt-10 px-4 lg:px-10'>
-      <ul className="hidden md:block grid grid-cols-1 grid-rows-7 space-y-3 w-[30%] float-left pr-5">
+    <div className='pt-10 px-4 lg:px-10'>
+      <ul className="hidden absolute md:block grid grid-cols-1 grid-rows-7 space-y-3 w-[30%] float-left pr-5">
               
             <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)} to="/" className="hover:text-yellow-500 focus:text-yellow-500 active:text-yellow-500">Overview</NavLink></li>
             <li className="group md:ml-8 text-xl md:my-0 my-7"> 
@@ -219,42 +259,42 @@ function NGO(){
              <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)}to="/" className="hover:text-yellow-500 focus:text-yellow-500">Checklist</NavLink></li> 
              <li className='text-xl bg-white shadow-md p-2'><NavLink onClick={() => setOpen(!open)}to="/" className="hover:text-yellow-500 focus:text-yellow-500">Process</NavLink></li> 
       </ul>
-      <div className='text-justify p-2'>
+      <div className='text-justify relative float-right'>
 
         <div>
-        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Trust Registration- An Overview</h1>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Trust Registration- An Overview</h1>
         <p>Trust registration in Delhi involves establishing a trust that is managed by a person (the settlor) to a trustee. The trustee holds and manages it for the benefit of specific individuals (the beneficiaries). To register a trust in Delhi, one needs to draft a trust deed that outlines the trust's objectives. It encompasses details of trustees and beneficiaries. The trust deed should then be executed and signed by the settlor and trustees. They are registered with the local sub-registrar office where the trust's registered office. This registration helps establish the legal validity of the trust.</p>
         </div>
 
         <div>
-        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Benefits of Trust Registration in Delhi</h1>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Benefits of Trust Registration in Delhi</h1>
         <ul>
           <li>
-            <h1>Perpetual Existence</h1>
+            <h1 className='font-bold'>Perpetual Existence</h1>
             <p>A registered trust in Delhi has perpetual existence. It can continue its operations even if there are changes in the trustees. The trust's activities and objectives can be carried forward across generations. It ensures the continuity of its charitable or religious initiatives.</p>
           </li>
-
+          <br/>
           <li>
-            <h1>Limited liability</h1>
+            <h1 className='font-bold'>Limited liability</h1>
             <p>One significant benefit of trust registration is limited liability protection. The trustees of a registered trust generally have limited personal liability. In case of legal disputes or debts, the personal assets of the trustees are protected. The trust's assets are used to satisfy the liabilities.</p>
           </li>
-
+          <br/>
           <li>
-            <h1>Enhanced Credibility</h1>
+          <h1 className='font-bold'>Enhanced Credibility</h1>
             <p>Trust registration enhances the credibility of the organisation. Especially beneficial for the eyes of donors, and government authorities. Being a registered entity demonstrates transparency and accountability. It can attract more donations, grants, and collaborations with other organisations.</p>
           </li>
-
+          <br/>
           <li>
-            <h1>Operational Advantages</h1>
+          <h1 className='font-bold'>Operational Advantages</h1>
             <p>Registered trusts are subject to certain rules and regulations that provide a framework. This framework promotes accountability, transparency, and governance within the trust. It helps streamline the trust's activities, financial management, and reporting procedures. It also ensures better operational efficiency.</p>
           </li> 
         </ul>
         </div>
 
         <div>
-        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Documents Required for Trust Registration in Delhi</h1>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Documents Required for Trust Registration in Delhi</h1>
         <p>The following documents are required for trust registration in Delhi:</p>
-        <ul>
+        <ul className='list-disc pl-4'>
           <li>Trust deed</li>
           <li>Proof of identity and address for trustee</li>
           <li>Proof of address of the trust</li>
@@ -263,9 +303,10 @@ function NGO(){
         </ul>
         </div>
 
+    {/* ------------------------------------------------------Eligibility Criteria-------------------------------------- */}
         <div>
-        <h1 className='text-2xl py-2 text-yellow-500 font-semibold'>Eligibility Criteria for Trust Registration in Delhi</h1>
-        <ul>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Eligibility Criteria for Trust Registration in Delhi</h1>
+        <ul className='list-disc pl-4'>
           <li>Seeking a competent and willing individual or entity for property transfer</li>
           <li>Minimum requirement of two individuals or corporate entities</li>
           <li>The trust activities must be lawful</li>
@@ -277,9 +318,59 @@ function NGO(){
         </ul>
         </div>
 
+    {/* -------------------------------------------------Eligibility Criteria------------------------------------ */}
+        <div>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Checklist for Trust Registration in Delhi</h1>
+        <ul className='list-disc pl-4'>
+          <li>Identify a competent settlor willing to transfer property</li>
+          <li>Appoint a minimum of two trustees, individuals or corporate entities</li>
+          <li>Determine lawful objectives falling under charitable, religious, educational, or social welfare activities</li>
+          <li>Prepare a trust deed clearly defining objectives, rules, and regulations</li>
+          <li>Execute the trust deed with proper signatures and witnesses</li>
+          <li>Prepare the application for trust registration with required details</li>
+          <li>Gather necessary documents, including identity proofs, address proofs, and property details</li>
+          <li>Arrange for the payment of the registration fee</li>
+          <li>Submit the application and supporting documents to the Registrar of Trusts</li>
+          <li>Ensure compliance with all applicable rules and regulations.</li>
+        </ul>
+        </div>
+
+      {/* -----------------------------------Process for Trust Registration in Delhi------------------------------ */}
+        <div>
+        <h1 className='text-lg md:text-2xl pt-5 text-yellow-500 font-semibold'>Checklist for Trust Registration in Delhi</h1>
+        <p>The process of trust registration in Delhi is as follows:</p><br/>
+        <ul className=''>
+          <li>
+            <h1 className='font-bold'>Step 1: Consultation and Document Collection</h1>
+            <p>Get expert consultation to understand your requirements. Avail help in choosing a unique trust name and the details of the trust you want to register. Submit the required documents for registration.</p>
+          </li>
+          <br/>
+          <li>
+          <h1 className='font-bold'>Step 2: Trust Deed Drafting</h1>
+            <p>Govyapar's legal experts would draft the trust deed according to your specifications. We ensure it complies with the Indian Trusts Act and relevant state laws. We will tailor the trust deed to reflect your intentions and objectives.</p>
+          </li>
+          <br/>
+          <li>
+          <h1 className='font-bold'>Step 3: Submit the Application</h1>
+            <p>With the trust deed and documents in hand, our team will file for registration. We make sure that all the information is accurate</p>
+          </li> 
+          <br/>
+          <li>
+          <h1 className='font-bold'>Step 4: Follow-Up and Verification</h1>
+            <p>Our team will address any queries or requirements arising during the process.</p>
+          </li> 
+          <br/>
+          <li>
+          <h1 className='font-bold'>Step 5: Registration and Documentation</h1>
+            <p>Post approval you will get a registration certificate from the Sub-Registrar's office. On request, we might also assist you in obtaining a PAN and open a bank account for the trust</p>
+          </li> 
+        </ul>
+        </div>
+
+
       </div>
 
-    </div> */}
+    </div>
     {/* ----------------------------------------------NGO Structure-wise Comparison---------------------------------------- */}
     <div className='pt-20 md:pt-40 md:px-10 lg:px-32'>
       <h1 className='text-2xl md:text-3xl text-center font-bold py-2'>NGO Structure-wise Comparison</h1>
